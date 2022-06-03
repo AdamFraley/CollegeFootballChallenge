@@ -1,0 +1,32 @@
+from django.db import models
+from players.models import User
+
+class Conference(models.Model):
+    name = models.CharField(max_length=50)
+    abbreviation = models.CharField(max_length=12, null=True)
+
+    def __str__(self):
+        return f'{self.abbreviation} - {self.name}'
+
+class Division(models.Model):
+    name = models.CharField(max_length=20)
+    conference = models.ForeignKey(Conference, on_delete=models.PROTECT)
+
+    def __str__(self):
+        return f'{self.name} - {self.conference}'
+
+class FbsTeam(models.Model):
+    # list of teams for the challenge
+    school_name = models.CharField(max_length=50)
+    school_abbrev = models.CharField(max_length=10, null=True, blank=True)
+    nickname = models.CharField(max_length=50)
+    conference_name = models.ForeignKey(Conference, on_delete=models.PROTECT, null=True)
+    division_name = models.ForeignKey(Division, on_delete=models.PROTECT, null= True, blank=True)
+    conference_abbrev = models.CharField(max_length=12)
+    owned = models.ForeignKey(User, on_delete=models.PROTECT, null=True, blank=True)
+    ranking = models.IntegerField(null=True, blank=True)
+
+    def __str__(self):
+        return self.school_name
+
+

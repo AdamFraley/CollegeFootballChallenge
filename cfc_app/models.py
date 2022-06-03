@@ -10,7 +10,7 @@ class Conference(models.Model):
 
 class Division(models.Model):
     name = models.CharField(max_length=20)
-    conference = models.ForeignKey(Conference, on_delete=models.PROTECT)
+    conference = models.ForeignKey(Conference, on_delete=models.PROTECT, related_name='divisions')
 
     def __str__(self):
         return f'{self.name} - {self.conference}'
@@ -20,8 +20,8 @@ class FbsTeam(models.Model):
     school_name = models.CharField(max_length=50)
     school_abbrev = models.CharField(max_length=10, null=True, blank=True)
     nickname = models.CharField(max_length=50)
-    conference_name = models.ForeignKey(Conference, on_delete=models.PROTECT, null=True)
-    division_name = models.ForeignKey(Division, on_delete=models.PROTECT, null= True, blank=True)
+    conference_name = models.ForeignKey(Conference, on_delete=models.PROTECT, null=True, related_name='teams')
+    division_name = models.ForeignKey(Division, on_delete=models.PROTECT, null= True, blank=True, related_name='teams')
     conference_abbrev = models.CharField(max_length=12)
     owned = models.ForeignKey(User, on_delete=models.PROTECT, null=True, blank=True)
     ranking = models.IntegerField(null=True, blank=True)

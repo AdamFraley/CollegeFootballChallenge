@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CFC Draft</title>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="https://cdn.tailwindcss.com/"></script>
+</head>
+<body>
+    <header class="fixed w-full bg-red-400 py-3 px-10">
+        <h3 class="text-xl">College Football Challenge || DRAFT</h3>
+    </header>
+    
+    <main class="pt-16 px-6">
+        {% for conference in conferences %}
+            <p class="underline">{{ conference.name }}</p>
+            {% if conference.divisions.all %}
+            {% for division in conference.divisions.all %}
+                <p class="font-bold">{{ division.name }}</p>
+                    {% for team in division.teams.all %}
+                        <p>{{ team.school_name }}</p>
+                    {% endfor %}
+            {% endfor %}
+            {% else %}
+            {% for team in conference.teams.all %}
+            <p>{{ team.school_name }}</p>
+            {% endfor %}
+            {% endif %}
+        {% endfor %}
+    
+
+    </main>
+
+
+    
+</body>
+</html>

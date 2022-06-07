@@ -13,12 +13,12 @@
         .grid-container {
             display: grid;
             grid-template-columns: auto auto auto auto auto auto auto auto auto;
-            padding: 10px;
+            padding: 20px;
           }
           .grid-item {
             background-color: rgba(255, 255, 255, 0.8);
             border: 1px solid rgba(0, 0, 0, 0.8);
-            padding: 8px;
+            padding: 2px;
             font-size: 15px;
             text-align: center;
           }
@@ -45,7 +45,11 @@
                 {% endif %}
             </div>
         </div>
+        {% if message %}
+        <p>{{ message }}</p>
+        {% endif %}
     </header>
+
 
     <div class="grid-container pt-20">
         <div class="grid-item">Name</div>
@@ -58,86 +62,114 @@
         <div class="grid-item">Round 7</div>
         <div class="grid-item">Round 8</div>
         <div class="grid-item"></div>  
-        <div class="grid-item">4</div>
-        <div class="grid-item">5</div>
-        <div class="grid-item">6</div>  
-        <div class="grid-item">7</div>
-        <div class="grid-item">8</div>
-        <div class="grid-item">9</div>
-        <div class="grid-item">10</div>
-        <div class="grid-item">11</div>
-        <div class="grid-item"></div>
-        <div class="grid-item">13</div>
+        <div class="grid-item">1</div>
         <div class="grid-item">14</div>
-        <div class="grid-item">15</div>
-        <div class="grid-item">16</div>
-        <div class="grid-item">17</div>
-        <div class="grid-item">18</div>
-        <div class="grid-item">19</div>
-        <div class="grid-item">20</div>
-        <div class="grid-item"></div>
-        <div class="grid-item">22</div>
-        <div class="grid-item">23</div>
-        <div class="grid-item">24</div>
-        <div class="grid-item">25</div>
-        <div class="grid-item">26</div>
-        <div class="grid-item">27</div>
+        <div class="grid-item">15</div>  
         <div class="grid-item">28</div>
         <div class="grid-item">29</div>
-        <div class="grid-item"></div>
-        <div class="grid-item">31</div>
-        <div class="grid-item">32</div>
-        <div class="grid-item">33</div>
-        <div class="grid-item">34</div>
-        <div class="grid-item">35</div>
-        <div class="grid-item">36</div>
-        <div class="grid-item">37</div>
-        <div class="grid-item">38</div>
-        <div class="grid-item"></div>
-        <div class="grid-item">40</div>
-        <div class="grid-item">41</div>
         <div class="grid-item">42</div>
         <div class="grid-item">43</div>
-        <div class="grid-item">44</div>
-        <div class="grid-item">45</div>
-        <div class="grid-item">46</div>
-        <div class="grid-item">47</div>
-        <div class="grid-item"></div>
-        <div class="grid-item">49</div>
-        <div class="grid-item">50</div>
-        <div class="grid-item">51</div>
-        <div class="grid-item">52</div>
-        <div class="grid-item">53</div>
-        <div class="grid-item">54</div>
-        <div class="grid-item">55</div>
         <div class="grid-item">56</div>
         <div class="grid-item"></div>
-        <div class="grid-item">58</div>
-        <div class="grid-item">59</div>
-        <div class="grid-item">60</div>
-        <div class="grid-item">61</div>
-        <div class="grid-item">62</div>
-        <div class="grid-item">63</div>
-        <div class="grid-item">63</div>
-        <div class="grid-item">63</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">13</div>
+        <div class="grid-item">16</div>
+        <div class="grid-item">27</div>
+        <div class="grid-item">30</div>
+        <div class="grid-item">41</div>
+        <div class="grid-item">44</div>
+        <div class="grid-item">56</div>
+        <div class="grid-item"></div>
+        <div class="grid-item">3</div>
+        <div class="grid-item">12</div>
+        <div class="grid-item">17</div>
+        <div class="grid-item">26</div>
+        <div class="grid-item">31</div>
+        <div class="grid-item">40</div>
+        <div class="grid-item">45</div>
+        <div class="grid-item">54</div>
+        <div class="grid-item"></div>
+        <div class="grid-item">4</div>
+        <div class="grid-item">11</div>
+        <div class="grid-item">18</div>
+        <div class="grid-item">25</div>
+        <div class="grid-item">32</div>
+        <div class="grid-item">39</div>
+        <div class="grid-item">46</div>
+        <div class="grid-item">53</div>
+        <div class="grid-item"></div>
+        <div class="grid-item">5</div>
+        <div class="grid-item">10</div>
+        <div class="grid-item">19</div>
+        <div class="grid-item">24</div>
+        <div class="grid-item">33</div>
+        <div class="grid-item">38</div>
+        <div class="grid-item">47</div>
+        <div class="grid-item">52</div>
+        <div class="grid-item"></div>
+        <div class="grid-item">6</div>
+        <div class="grid-item">9</div>
+        <div class="grid-item">20</div>
+        <div class="grid-item">23</div>
+        <div class="grid-item">34</div>
+        <div class="grid-item">37</div>
+        <div class="grid-item">48</div>
+        <div class="grid-item">51</div>
+        <div class="grid-item"></div>
+        <div class="grid-item">7</div>
+        <div class="grid-item">8</div>
+        <div class="grid-item">21</div>
+        <div class="grid-item">22</div>
+        <div class="grid-item">35</div>
+        <div class="grid-item">36</div>
+        <div class="grid-item">49</div>
+        <div class="grid-item">50</div>
     </div>
 
-    <main class="pt-8 px-6">
+    <main class="px-6">
         <ul class="flex flex-wrap justify-evenly">
             {% for conference in conferences %}
             <li class="pt-1 mt-1 mb-1 border-solid border-4 rounded">
                 <p class="font-bold px-1 underline">{{ conference.name }}</p>
                 {% if conference.divisions.all %}
-                {% for division in conference.divisions.all %}
-                <p class="underline px-3">{{ division.name }}</p>
-                {% for team in division.teams.all %}
-                <p class="px-6">{{ team.school_name }}</p>
-                {% endfor %}
-                {% endfor %}
+                    {% for division in conference.divisions.all %}
+                        <p class="underline px-3">{{ division.name }}</p>
+                        {% for team in division.teams.all %}
+                            {% if team.owned %}
+                            <p class="px-6 text-red-500 font-md">{{ team.school_name }} -> {{ team.owned }}</p>
+                            {% else %}
+                            <p class="px-6">
+                                <a href="/select/{{ team.id }}">
+                                    <button class="
+                                        text-xs bg-transparent hover:bg-blue-500 text-blue-700 
+                                        font-semibold hover:text-white px-1 border 
+                                        border-blue-500 hover:border-transparent rounded">
+                                        select
+                                    </button>
+                                </a>
+                                {{ team.school_name }}
+                            </p>
+                            {% endif %}
+                        {% endfor %}
+                    {% endfor %}
                 {% else %}
-                {% for team in conference.teams.all %}
-                <p class="px-6">{{ team.school_name }}</p>
-                {% endfor %}
+                    {% for team in conference.teams.all %}
+                    {% if team.owned %}
+                    <p class="px-6 text-red-500 font-md">{{ team.school_name }} -> {{ team.owned }}</p>
+                    {% else %}
+                    <p class="px-6">
+                        <a href="/select/{{ team.id }}">
+                            <button class="
+                                text-xs bg-transparent hover:bg-blue-500 text-blue-700 
+                                font-semibold hover:text-white px-1 border 
+                                border-blue-500 hover:border-transparent rounded">
+                                select
+                            </button>
+                        </a>
+                        {{ team.school_name }}
+                    </p>
+                    {% endif %}
+                    {% endfor %}
                 {% endif %}
             </li>
             {% endfor %}

@@ -27,6 +27,6 @@ class FbsTeam(models.Model):
     ranking = models.IntegerField(null=True, blank=True)
 
     def __str__(self):
-        return self.school_name
-
+        return f'{self.school_name} - {self.owned}' if self.owned != None else f'{self.school_name}'
+        
 

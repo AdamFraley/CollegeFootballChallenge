@@ -6,4 +6,5 @@ app_name = 'draft'
 urlpatterns = [
     path('', views.index, name='home'),
     path('select/<int:id>/', views.select, name='select'),
+    path('draft-test/', views.draft_test)
 ]

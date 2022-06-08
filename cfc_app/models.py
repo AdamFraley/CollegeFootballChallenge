@@ -1,5 +1,6 @@
 from django.db import models
 from players.models import User
+import random
 
 class Conference(models.Model):
     name = models.CharField(max_length=50)
@@ -31,8 +32,61 @@ class FbsTeam(models.Model):
         
 class League(models.Model):
     name = models.CharField(max_length=25, blank=True, null=True)
-    player = models.ForeignKey(User, on_delete=models.PROTECT, null=True, blank=True)
+    player = models.ManyToManyField(User, blank=True)
     
     def __str__(self):
         return self.name
+
+class Pick(models.Model):
+    player = models.ForeignKey(User, on_delete=models.PROTECT, related_name='players')
+    pick_number = models.IntegerField()
+    team = models.OneToOneField(FbsTeam, on_delete=models.PROTECT, null=True, blank=True)
+    draft = models.ForeignKey('Draft', on_delete=models.PROTECT, null=True, blank=True)
+
+    def __str__(self):
+        return f'{self.player.username} - pick {self.pick_number}'
+
+class Draft(models.Model):
+    players = models.ManyToManyField(User)
+
+    def create_draft_order(self):
+        from random import shuffle
+        # print(self.players.all())
+        players = list(self.players.all())
+        # print(players)
+        shuffle(players)
+        # print(players)
+        # print(players[0].username, players[0].draft_order)
+        k = 1
+        for player in players:
+            player.draft_order = k
+            player.save()
+            print(player.username, player.draft_order)
+            k += 1
+        # give random numbers 1-7 for draft position to each player
+        range_picks = (len(players) * 8) + 1
+        print(range_picks)
+        player_draft_position = 1
+        counting = 'up'
+        for pick in range(1, range_picks):
+            print(f'{players[player_draft_position - 1]} has pick {pick}')
+            Pick.objects.create(
+                player = players[player_draft_position - 1],
+                pick_number = pick,
+                draft = self
+            )
+            player.save()
+            if counting == 'up':
+                if player_draft_position == 7:
+                    counting = 'down'
+                else:
+                    player_draft_position += 1
+            elif counting == 'down':
+                if player_draft_position == 1:
+                    counting = 'up'
+                else:
+                    player_draft_position -= 1
+       
+        return
+
 

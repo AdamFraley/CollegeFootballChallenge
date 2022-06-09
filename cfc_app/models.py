@@ -38,7 +38,7 @@ class League(models.Model):
         return self.name
 
 class Pick(models.Model):
-    player = models.ForeignKey(User, on_delete=models.PROTECT, related_name='players')
+    player = models.ForeignKey(User, on_delete=models.PROTECT, related_name='picks')
     pick_number = models.IntegerField()
     team = models.OneToOneField(FbsTeam, on_delete=models.PROTECT, null=True, blank=True)
     draft = models.ForeignKey('Draft', on_delete=models.PROTECT, null=True, blank=True)

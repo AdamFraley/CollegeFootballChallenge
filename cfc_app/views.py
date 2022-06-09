@@ -11,7 +11,9 @@ def index(request):
     conferences = Conference.objects.all()
     divisions = Division.objects.all()
     message = request.GET.get('message')
-    players = User.objects.all()
+    draft = Draft.objects.first()
+    players = draft.players.order_by('draft_order')
+
 
     context = {
         'teams' : teams,

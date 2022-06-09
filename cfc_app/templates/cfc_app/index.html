@@ -141,95 +141,14 @@
                 </tr>
             </thead>
             <tbody class="divide-y divide-gray-400 bg-white">
+                {% for player in players %}
                 <tr class="divide-x divide-gray-600">
-                    <td class="whitespace-nowrap py-1 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">Adam</td>
-                    <td class="whitespace-nowrap px-3 py-1 text-sm text-gray-500">1</td>
-                    <td class="whitespace-nowrap px-3 py-1 text-sm text-gray-500">14</td>
-                    <td class="whitespace-nowrap px-3 py-1 text-sm text-gray-500">15</td>
-                    <td class="whitespace-nowrap px-3 py-1 text-sm text-gray-500">28</td>
-                    <td class="whitespace-nowrap px-3 py-1 text-sm text-gray-500">29</td>
-                    <td class="whitespace-nowrap px-3 py-1 text-sm text-gray-500">42</td>
-                    <td class="whitespace-nowrap px-3 py-1 text-sm text-gray-500">43</td>
-                    <td class="whitespace-nowrap px-3 py-1 text-sm text-gray-500">56</td>
+                    <td class="whitespace-nowrap py-1 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">{{player.username}} Player {{ player.draft_order }}</td>
+                    {% for pick in player.picks.all %}
+                    <td class="whitespace-nowrap px-3 py-1 text-sm text-gray-500">{{ pick.pick_number }}</td>
+                    {% endfor %}
                 </tr>
-            </tbody>
-            <tbody class="divide-y divide-gray-400 bg-white">
-                <tr class="divide-x divide-gray-600">
-                    <td class="whitespace-nowrap py-1 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">Pete</td>
-                    <td class="whitespace-nowrap px-3 py-1 text-sm text-gray-500">2</td>
-                    <td class="whitespace-nowrap px-3 py-1 text-sm text-gray-500">13</td>
-                    <td class="whitespace-nowrap px-3 py-1 text-sm text-gray-500">16</td>
-                    <td class="whitespace-nowrap px-3 py-1 text-sm text-gray-500">27</td>
-                    <td class="whitespace-nowrap px-3 py-1 text-sm text-gray-500">30</td>
-                    <td class="whitespace-nowrap px-3 py-1 text-sm text-gray-500">41</td>
-                    <td class="whitespace-nowrap px-3 py-1 text-sm text-gray-500">44</td>
-                    <td class="whitespace-nowrap px-3 py-1 text-sm text-gray-500">55</td>
-                </tr>
-            </tbody>
-            <tbody class="divide-y divide-gray-400 bg-white">
-                <tr class="divide-x divide-gray-600">
-                    <td class="whitespace-nowrap py-1 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">Nathan</td>
-                    <td class="whitespace-nowrap px-3 py-1 text-sm text-gray-500">3</td>
-                    <td class="whitespace-nowrap px-3 py-1 text-sm text-gray-500">12</td>
-                    <td class="whitespace-nowrap px-3 py-1 text-sm text-gray-500">17</td>
-                    <td class="whitespace-nowrap px-3 py-1 text-sm text-gray-500">26</td>
-                    <td class="whitespace-nowrap px-3 py-1 text-sm text-gray-500">31</td>
-                    <td class="whitespace-nowrap px-3 py-1 text-sm text-gray-500">40</td>
-                    <td class="whitespace-nowrap px-3 py-1 text-sm text-gray-500">45</td>
-                    <td class="whitespace-nowrap px-3 py-1 text-sm text-gray-500">54</td>
-                </tr>
-            </tbody>
-            <tbody class="divide-y divide-gray-400 bg-white">
-                <tr class="divide-x divide-gray-600">
-                    <td class="whitespace-nowrap py-1 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">Mitch</td>
-                    <td class="whitespace-nowrap px-3 py-1 text-sm text-gray-500">4</td>
-                    <td class="whitespace-nowrap px-3 py-1 text-sm text-gray-500">11</td>
-                    <td class="whitespace-nowrap px-3 py-1 text-sm text-gray-500">18</td>
-                    <td class="whitespace-nowrap px-3 py-1 text-sm text-gray-500">25</td>
-                    <td class="whitespace-nowrap px-3 py-1 text-sm text-gray-500">32</td>
-                    <td class="whitespace-nowrap px-3 py-1 text-sm text-gray-500">39</td>
-                    <td class="whitespace-nowrap px-3 py-1 text-sm text-gray-500">46</td>
-                    <td class="whitespace-nowrap px-3 py-1 text-sm text-gray-500">53</td>
-                </tr>
-            </tbody>
-            <tbody class="divide-y divide-gray-400 bg-white">
-                <tr class="divide-x divide-gray-600">
-                    <td class="whitespace-nowrap py-1 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">Matt</td>
-                    <td class="whitespace-nowrap px-3 py-1 text-sm text-gray-500">5</td>
-                    <td class="whitespace-nowrap px-3 py-1 text-sm text-gray-500">10</td>
-                    <td class="whitespace-nowrap px-3 py-1 text-sm text-gray-500">19</td>
-                    <td class="whitespace-nowrap px-3 py-1 text-sm text-gray-500">24</td>
-                    <td class="whitespace-nowrap px-3 py-1 text-sm text-gray-500">33</td>
-                    <td class="whitespace-nowrap px-3 py-1 text-sm text-gray-500">38</td>
-                    <td class="whitespace-nowrap px-3 py-1 text-sm text-gray-500">47</td>
-                    <td class="whitespace-nowrap px-3 py-1 text-sm text-gray-500">52</td>
-                </tr>
-            </tbody>
-            <tbody class="divide-y divide-gray-400 bg-white">
-                <tr class="divide-x divide-gray-600">
-                    <td class="whitespace-nowrap py-1 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">Dustin</td>
-                    <td class="whitespace-nowrap px-3 py-1 text-sm text-gray-500">6</td>
-                    <td class="whitespace-nowrap px-3 py-1 text-sm text-gray-500">9</td>
-                    <td class="whitespace-nowrap px-3 py-1 text-sm text-gray-500">20</td>
-                    <td class="whitespace-nowrap px-3 py-1 text-sm text-gray-500">23</td>
-                    <td class="whitespace-nowrap px-3 py-1 text-sm text-gray-500">34</td>
-                    <td class="whitespace-nowrap px-3 py-1 text-sm text-gray-500">37</td>
-                    <td class="whitespace-nowrap px-3 py-1 text-sm text-gray-500">48</td>
-                    <td class="whitespace-nowrap px-3 py-1 text-sm text-gray-500">51</td>
-                </tr>
-            </tbody>
-            <tbody class="divide-y divide-gray-400 bg-white">
-                <tr class="divide-x divide-gray-600">
-                    <td class="whitespace-nowrap py-1 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">Logan</td>
-                    <td class="whitespace-nowrap px-3 py-1 text-sm text-gray-500">7</td>
-                    <td class="whitespace-nowrap px-3 py-1 text-sm text-gray-500">8</td>
-                    <td class="whitespace-nowrap px-3 py-1 text-sm text-gray-500">21</td>
-                    <td class="whitespace-nowrap px-3 py-1 text-sm text-gray-500">22</td>
-                    <td class="whitespace-nowrap px-3 py-1 text-sm text-gray-500">35</td>
-                    <td class="whitespace-nowrap px-3 py-1 text-sm text-gray-500">36</td>
-                    <td class="whitespace-nowrap px-3 py-1 text-sm text-gray-500">49</td>
-                    <td class="whitespace-nowrap px-3 py-1 text-sm text-gray-500">50</td>
-                </tr>
+                {% endfor %}
             </tbody>
         </table>
     </div>

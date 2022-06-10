@@ -142,12 +142,22 @@
             </thead>
             <tbody class="divide-y divide-gray-400 bg-white">
                 {% for player in players %}
-                <tr class="divide-x divide-gray-600">
-                    <td class="whitespace-nowrap py-1 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">{{player.username}} Player {{ player.draft_order }}</td>
-                    {% for pick in player.picks.all %}
-                    <td class="whitespace-nowrap px-3 py-1 text-sm text-gray-500">{{ pick.pick_number }}</td>
-                    {% endfor %}
-                </tr>
+                    {% if player.draft_order %}
+                        <tr class="divide-x divide-gray-600">
+                            <td class="whitespace-nowrap py-1 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">{{player.username}}</td>
+                            {% for pick in player.picks.all %}
+                                {% if pick.team %}
+                                    <td class="whitespace-nowrap px-3 py-1 text-sm text-gray-500">{{ pick.team.school_name }}</td>
+                                {% else %}
+                                    {% if pick.pick_number == draft.current_pick %}
+                                        <td class="whitespace-nowrap px-3 py-1 text-sm text-gray-500 bg-amber-400">Pick {{ pick.pick_number }}</td>
+                                    {% else %}
+                                        <td class="whitespace-nowrap px-3 py-1 text-sm text-gray-500">Pick {{ pick.pick_number }}</td>
+                                    {% endif %}
+                                {% endif %}
+                            {% endfor %}
+                        </tr>
+                    {% endif %}
                 {% endfor %}
             </tbody>
         </table>
@@ -205,7 +215,7 @@
 
     <footer class="w-full h-10 bg-red-500 bottom-0 items-center mt-1">
         <p class="text-black text-center pt-2 flex justify-between items-center px-96"> &copy College Football Challenge
-            <a href="/admin/">Admin</a></p>
+            <a href="/admin/" class="underline">Admin</a></p>
     </footer>
 
 </body>

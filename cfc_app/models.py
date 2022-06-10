@@ -1,3 +1,4 @@
+from re import T
 from django.db import models
 from players.models import User
 import random
@@ -39,15 +40,16 @@ class League(models.Model):
 
 class Pick(models.Model):
     player = models.ForeignKey(User, on_delete=models.PROTECT, related_name='picks')
-    pick_number = models.IntegerField()
+    pick_number = models.IntegerField(null=True, blank=True)
     team = models.OneToOneField(FbsTeam, on_delete=models.PROTECT, null=True, blank=True)
     draft = models.ForeignKey('Draft', on_delete=models.PROTECT, null=True, blank=True)
 
     def __str__(self):
-        return f'{self.player.username} - pick {self.pick_number}'
+        return f'{self.player.username} - pick {self.pick_number} - {self.team}' if self.team != None else f'{self.player.username} - pick {self.pick_number}'
 
 class Draft(models.Model):
     players = models.ManyToManyField(User)
+    current_pick = models.IntegerField(default=1)
 
     def create_draft_order(self):
         from random import shuffle
@@ -65,11 +67,11 @@ class Draft(models.Model):
             k += 1
         # give random numbers 1-7 for draft position to each player
         range_picks = (len(players) * 8) + 1
-        print(range_picks)
+        # print(range_picks)
         player_draft_position = 1
         counting = 'up'
         for pick in range(1, range_picks):
-            print(f'{players[player_draft_position - 1]} has pick {pick}')
+            # print(f'{players[player_draft_position - 1]} has pick {pick}')
             Pick.objects.create(
                 player = players[player_draft_position - 1],
                 pick_number = pick,
@@ -86,7 +88,6 @@ class Draft(models.Model):
                     counting = 'up'
                 else:
                     player_draft_position -= 1
-       
         return
 
 

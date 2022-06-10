@@ -6,5 +6,7 @@ app_name = 'draft'
 urlpatterns = [
     path('', views.index, name='home'),
     path('select/<int:id>/', views.select, name='select'),
-    path('draft-test/', views.draft_test)
+    path('create-draft/', views.create_draft),
+    path('reset-teams-picks/', views.reset_teams_picks),
+    path('reset-draft-order/', views.reset_draft_order),
 ]

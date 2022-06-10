@@ -67,3 +67,18 @@ def reset_draft_order(request):
     Draft.objects.update(current_pick=1)
     Pick.objects.all().delete()
     return redirect('draft:home')
+
+@user_passes_test(lambda u: u.is_superuser, '/?message=YOU+cant+reset+the+draft+order')
+def reset_draft(request):
+    FbsTeam.objects.update(owned=None)
+    Pick.objects.update(team=None)
+    User.objects.update(draft_order=None)
+    Draft.objects.update(current_pick=1)
+    Pick.objects.all().delete()
+    return redirect('draft:home')
+
+@user_passes_test(lambda u: u.is_superuser, '/?message=YOU+cant+reset+the+draft+order')
+def undo_last_pick(request):
+    # if not Pick.objects.team:
+    #     print(Pick.objects.first())
+    return redirect('draft:home')

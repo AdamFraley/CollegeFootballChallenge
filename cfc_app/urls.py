@@ -9,4 +9,6 @@ urlpatterns = [
     path('create-draft/', views.create_draft),
     path('reset-teams-picks/', views.reset_teams_picks),
     path('reset-draft-order/', views.reset_draft_order),
+    path('reset-draft/', views.reset_draft),
+    path('undo-last-pick/', views.undo_last_pick),
 ]

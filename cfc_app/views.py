@@ -79,6 +79,16 @@ def reset_draft(request):
 
 @user_passes_test(lambda u: u.is_superuser, '/?message=YOU+cant+reset+the+draft+order')
 def undo_last_pick(request):
-    # if not Pick.objects.team:
-    #     print(Pick.objects.first())
+    draft = Draft.objects.first()
+    draft.current_pick -= 1
+    draft.save()
+    pick = Pick.objects.get(pick_number=draft.current_pick)
+    team = pick.team
+    team.owned = None
+    team.save()
+    pick.team = None
+    pick.save()
     return redirect('draft:home')
+
+def rules(request):
+    return render (request, 'cfc_app/rules.html')

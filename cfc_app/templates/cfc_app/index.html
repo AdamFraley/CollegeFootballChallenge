@@ -27,26 +27,28 @@
 
 <body>
     <header class="fixed w-full bg-red-400 py-3 px-10 flex justify-between items-center">
-        <h3 class="text-2xl">College Football Challenge || DRAFT</h3>
-        <div>
+        <h3 class="text-lg">College Football Challenge || DRAFT
+            <a href="{% url 'draft:rules' %}" class="text-base pl-48">Rules</a>
+            <a href="" class="text-base pl-8">Current Roster</a>
+            <a href="" class="text-base pl-8">Big Board</a>
+        </h3>
             <div>
                 {% if request.user.is_authenticated %}
                 <Span>Welcome, {{ user.username }}</Span>
                 <a href="{% url 'players:logout' %}" class="
                               px-2 py-1 border-black border-2 rounded-md
-                              hover:bg-white-800 hover:text-zinc ml-1">Log Out</a>
+                              hover:bg-white-800 hover:text-zinc ml-1 text-xs">Log Out</a>
                 {% else %}
                 <a href="{% url 'players:signup' %}" class="
-                          px-6 py-1 border-black border-2 rounded-md
-                          hover:bg-white-800 hover:text-zinc ml-1">Sign Up</a>
+                          px-2 py-1 border-black border-2 rounded-md
+                          hover:bg-white-800 hover:text-zinc ml-1 text-xs">Sign Up</a>
                 <a href="{% url 'players:login' %}" class="
-                          px-6 py-1 border-black border-2 rounded-md
-                          hover:bg-white-800 hover:text-zinc ml-1">Log In</a>
+                          px-2 py-1 border-black border-2 rounded-md
+                          hover:bg-white-800 hover:text-zinc ml-1 text-xs">Log In</a>
                 {% endif %}
-            </div>
-        </div>
+            </div>        
         {% if message %}
-        <p>{{ message }}</p>
+            <p>{{ message }}</p>
         {% endif %}
     </header>   
     
@@ -173,8 +175,27 @@
                         <p class="underline px-3">{{ division.name }}</p>
                         {% for team in division.teams.all %}
                             {% if team.owned %}
-                            <p class="px-6 text-red-500 font-md">{{ team.school_name }} -> {{ team.owned }}</p>
+                                <p class="px-2 font-md border-2 border-solid rounded-md ml-4 mr-3 bg-stone-200">{{ team.school_name }} -> {{ team.owned }}</p>
                             {% else %}
+                                <p class="px-6">
+                                    <a href="/select/{{ team.id }}">
+                                        <button class="
+                                            text-xs bg-transparent hover:bg-blue-500 text-blue-700 
+                                            font-semibold hover:text-white px-1 border 
+                                            border-blue-500 hover:border-transparent rounded">
+                                            select
+                                        </button>
+                                    </a>
+                                    {{ team.school_name }}
+                                </p>
+                            {% endif %}
+                        {% endfor %}
+                    {% endfor %}
+                {% else %}
+                    {% for team in conference.teams.all %}
+                        {% if team.owned %}
+                            <p class="px-2 font-md border-2 border-solid rounded-md ml-4 mr-3 bg-stone-200">{{ team.school_name }} -> {{ team.owned }}</p>
+                        {% else %}
                             <p class="px-6">
                                 <a href="/select/{{ team.id }}">
                                     <button class="
@@ -186,26 +207,7 @@
                                 </a>
                                 {{ team.school_name }}
                             </p>
-                            {% endif %}
-                        {% endfor %}
-                    {% endfor %}
-                {% else %}
-                    {% for team in conference.teams.all %}
-                    {% if team.owned %}
-                    <p class="px-6 text-red-500 font-md">{{ team.school_name }} -> {{ team.owned }}</p>
-                    {% else %}
-                    <p class="px-6">
-                        <a href="/select/{{ team.id }}">
-                            <button class="
-                                text-xs bg-transparent hover:bg-blue-500 text-blue-700 
-                                font-semibold hover:text-white px-1 border 
-                                border-blue-500 hover:border-transparent rounded">
-                                select
-                            </button>
-                        </a>
-                        {{ team.school_name }}
-                    </p>
-                    {% endif %}
+                        {% endif %}
                     {% endfor %}
                 {% endif %}
             </li>
@@ -213,9 +215,9 @@
         </ul>
     </main>
 
-    <footer class="w-full h-10 bg-red-500 bottom-0 items-center mt-1">
-        <p class="text-black text-center pt-2 flex justify-between items-center px-96"> &copy College Football Challenge
-            <a href="/admin/" class="underline">Admin</a></p>
+    <footer class="w-full h-10 bg-red-500 bottom-0 items-center mt-1 text-sm">
+        <p class="text-black text-center pt-2">2012 &copy College Football Challenge &trade;
+            <a href="/admin/" class="underline ml-10">admin</a></p>
     </footer>
 
 </body>

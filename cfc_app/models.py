@@ -45,7 +45,7 @@ class Pick(models.Model):
     draft = models.ForeignKey('Draft', on_delete=models.PROTECT, null=True, blank=True)
 
     def __str__(self):
-        return f'{self.player.username} - pick {self.pick_number} - {self.team}' if self.team != None else f'{self.player.username} - pick {self.pick_number}'
+        return f'pick {self.pick_number} - {self.player.username} -> {self.team.school_name}' if self.team != None else f'pick {self.pick_number} - {self.player.username}'
 
 class Draft(models.Model):
     players = models.ManyToManyField(User)

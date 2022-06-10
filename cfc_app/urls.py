@@ -11,4 +11,5 @@ urlpatterns = [
     path('reset-draft-order/', views.reset_draft_order),
     path('reset-draft/', views.reset_draft),
     path('undo-last-pick/', views.undo_last_pick),
+    path('rules/', views.rules, name='rules'),
 ]

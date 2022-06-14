@@ -26,7 +26,3 @@ class Command(BaseCommand):
                     division_name = division,
                 )
 
-
-
-
-# SEC has ID #1

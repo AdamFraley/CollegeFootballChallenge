@@ -1,13 +1,13 @@
-id,name,conference_id
-1,East,11
-2,West,11
-3,Mountain,8
-4,West,8
-5,Atlantic,2
-6,Coastal,2
-7,East,4
-8,West,4
-9,East,7
-10,West,7
-11,East,10
-12,West,10
+id,name,conference_name
+1,East,Sun Belt Conference
+2,West,Sun Belt Conference
+3,Mountain,Mountain West Conference
+4,West,Mountain West Conference
+5,Atlantic,Atlantic Coast Conference
+6,Coastal,Atlantic Coast Conference
+7,East,Big Ten Conference
+8,West,Big Ten Conference
+9,East,Mid-American Conference
+10,West,Mid-American Conference
+11,East,Southeastern Conference
+12,West,Southeastern Conference

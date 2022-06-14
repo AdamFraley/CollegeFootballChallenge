@@ -13,14 +13,17 @@ class Command(BaseCommand):
         with open('csv/cfc_fbs.csv', 'r') as f:
             reader = csv.DictReader(f)
             for row in reader:
-                print(row)
+                # print(row)
                 conference = Conference.objects.get(name=row['conference_name'])
-                division = conference.divisions.get(name=row['name'])
+                if conference.divisions.all().exists():
+                    division = conference.divisions.get(name=row['division_name'])
+                else:
+                    division = None
 
                 FbsTeam.objects.get_or_create(
                     school_name = row['school_name'],
                     nickname = row['nickname'],
-                    conference = conference,
+                    conference_name = conference,
                     school_abbrev = row['school_abbrev'],
                     conference_abbrev = row['conference_abbrev'],
                     division_name = division,

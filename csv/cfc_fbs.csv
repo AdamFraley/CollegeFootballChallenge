@@ -1,132 +1,132 @@
-id,school_name,nickname,ranking,owned_id,division_name_id,conference_name_id,school_abbrev,conference_abbrev
-1,Cincinnati,Bearcats,,,,1,,AAC
-2,East Carolina,Pirates,,,,1,,AAC
-3,Houston,Cougars,,,,1,,AAC
-4,Memphis,Tigers,,,,1,,AAC
-5,Navy,Midshipmen,,,,1,,AAC
-6,Southern Methodist University,Mustangs,,,,1,SMU,AAC
-7,South Florida,Bulls,,,,1,,AAC
-8,Temple,Owls,,,,1,,AAC
-9,Tulane,Green Wave,,,,1,,AAC
-10,Tulsa,Golden Hurricane,,,,1,,AAC
-11,University of Central Florida,Knights,,,,1,UCF,AAC
-12,Appalachian State,Mountaineers,,,1,11,,Sun Belt
-13,Coastal Carolina,Chanticleers,,,1,11,CCU,Sun Belt
-14,Georgia Southern,Eagles,,,1,11,,Sun Belt
-15,Georgia State,Panthers,,,1,11,,Sun Belt
-16,James Madison,Dukes,,,1,11,JMU,Sun Belt
-17,Marshall,Thundering Herd,,,1,11,,Sun Belt
-18,Old Dominion,Monarchs,,,1,11,ODU,Sun Belt
-19,Arkansas State,Red Wolves,,,2,11,,Sun Belt
-20,Louisiana,Ragin' Cajuns,,,2,11,ULL,Sun Belt
-21,Lousiana-Monroe,Warhawks,,,2,11,ULM,Sun Belt
-22,South Alabama,Jaguars,,,2,11,USA,Sun Belt
-23,Southern Miss,Golden Eagles,,,2,11,,Sun Belt
-24,Texas State,Bobcats,,,2,11,,Sun Belt
-25,Troy,Trojans,,,2,11,,Sun Belt
-26,Boston College,Eagles,,,5,2,,ACC
-27,Clemson,Tigers,,,5,2,,ACC
-28,Florida State,Seminoles,,,5,2,FSU,ACC
-29,Louisville,Cardinals,,,5,2,,ACC
-30,NS State,Wolfpack,,,5,2,,ACC
-31,Syracuse,Orange,,,5,2,,ACC
-32,Wake Forest,Demon Deacons,,,5,2,WF,ACC
-33,Duke,Blue Devils,,,6,2,,ACC
-34,Georgia Tech,Yellow Jackets,,,6,2,GT,ACC
-35,Miami (FL),Hurricanes,,,6,2,UM,ACC
-36,North Carolina,Tarheels,,,6,2,UNC,ACC
-37,Pittsburgh,Panthers,,,6,2,Pitt,ACC
-38,Virginia,Cavaliers,,,6,2,UV,ACC
-39,Virginia Tech,Hokies,,,6,2,VT,ACC
-40,Indiana,Hoosiers,,,7,4,IU,Big Ten
-41,Maryland,Terrapins,,,7,4,,Big Ten
-42,Michigan,Wolverines,,,7,4,UM,Big Ten
-43,Michigan State,Spartans,,,7,4,MSU,Big Ten
-44,Ohio State,Buckeyes,,,7,4,OSU,Big Ten
-45,Penn State,Nittany Lions,,,7,4,PSU,Big Ten
-46,Rutgers,Scarlet Knights,,,7,4,,Big Ten
-47,Illinois,Fighting Illini,,,8,4,,Big Ten
-48,Iowa,Hawkeyes,,,8,4,,Big Ten
-49,Minnesota,Golden Gophers,,,8,4,,Big Ten
-50,Nebraska,Cornhuskers,,,8,4,,Big Ten
-51,Northwestern,Wildcats,,,8,4,,Big Ten
-52,Purdue,Boilermakers,,,8,4,,Big Ten
-53,Wisconsin,Badgers,,,8,4,,Big Ten
-54,Baylor,Bears,,,,3,,Big 12
-55,Iowa State,Cyclones,,,,3,ISU,Big 12
-56,Kansas,Jayhawks,,,,3,,Big 12
-57,Kansas State,Wildcats,,,,3,KSU,Big 12
-58,Oklahoma,Sooners,,,,3,OU,Big 12
-59,Oklahoma State,Cowboys,,,,3,OSU,Big 12
-60,Texas Christian University,Horned Frogs,,,,3,TCU,Big 12
-61,Texas,Longhorns,,,,3,UT,Big 12
-62,Texas Tech,Red Raiders,,,,3,TTU,Big 12
-63,West Virginia,Mountaineers,,,,3,WVU,Big 12
-64,Charlotte,49ers,,,,5,,C-USA
-65,FIU,Panthers,,,,5,FIU,C-USA
-66,Florida Atlantic,Owls,,,,5,FAU,C-USA
-67,Louisiana Tech,Bulldogs,,,,5,LT,C-USA
-68,Middle Tennessee,Blue Raiders,,,,5,MTSU,C-USA
-69,North Texas,Mean Green,,,,5,UNT,C-USA
-70,Rice,Owls,,,,5,,C-USA
-71,UAB,Blazers,,,,5,UAB,C-USA
-72,UTEP,Miners,,,,5,UTEP,C-USA
-73,UTSA,Roadrunners,,,,5,UTSA,C-USA
-74,Western Kentucky,Hilltoppers,,,,5,WKU,C-USA
-75,Akron,Zips,,,9,7,,MAC
-76,Bowling Green,Falcons,,,9,7,,MAC
-77,Buffalo,Bulls,,,9,7,,MAC
-78,Kent State,Golden Flashes,,,9,7,,MAC
-79,Miami (OH),Redhawks,,,9,7,,MAC
-80,Ohio,Bobcats,,,9,7,,MAC
-81,Ball State,Cardinals,,,10,7,,MAC
-82,Central Michigan,Chippewas,,,10,7,CMU,MAC
-83,Eastern Michigan,Eagles,,,10,7,EMU,MAC
-84,Northern Illinois,Huskies,,,10,7,NIU,MAC
-85,Toledo,Rockets,,,10,7,,MAC
-86,Western Michigan,Broncos,,,10,7,WMU,MAC
-87,Air Force,Falcons,,,3,8,,MWC
-88,Boise State,Broncos,,,3,8,,MWC
-89,Colorado State,Rams,,,3,8,CSU,MWC
-90,New Mexico,Lobos,,,3,8,,MWC
-91,Utah State,Aggies,,,3,8,USU,MWC
-92,Wyoming,Cowboys,,,3,8,,MWC
-93,Fresno State,Bulldogs,,,4,8,,MWC
-94,Hawaii,Rainbow Warriors,,,4,8,,MWC
-95,Nevada,Wolf Pack,,,4,8,,MWC
-96,San Diego State,Aztecs,,,4,8,SDSU,MWC
-97,San Jose State,Spartans,,,4,8,SJSU,MWC
-98,UNLV,Rebels,,,4,8,UNLV,MWC
-99,Arizona,Wildcats,,,,9,AU,Pac-12
-100,Arizona State,Sun Devils,,,,9,ASU,Pac-12
-101,California,Golden Bears,,,,9,Cal,Pac-12
-102,Colorado,Buffaloes,,,,9,CU,Pac-12
-103,Oregon,Ducks,,,,9,,Pac-12
-104,Oregon State,Beavers,,,,9,OSU,Pac-12
-105,USC,Trojans,,,,9,USC,Pac-12
-106,Utah,Utes,,,,9,,Pac-12
-107,Washington,Huskies,,,,9,UW,Pac-12
-108,Washington State,Cougars,,,,9,WSU,Pac-12
-109,Florida,Gators,,,11,10,UF,SEC
-110,Georgia,Bulldogs,,,11,10,UG,SEC
-111,Kentucky,Wildcats,,,11,10,UK,SEC
-112,Missouri,Tigers,,,11,10,,SEC
-113,South Carolina,Gamecocks,,,11,10,USC,SEC
-114,Tennessee,Volunteers,,,11,10,,SEC
-115,Vanderbilt,Commodores,,,11,10,,SEC
-116,Alabama,Crimson Tide,,,12,10,,SEC
-117,Arkansas,Razorbacks,,,12,10,,SEC
-118,Auburn,Tigers,,,12,10,,SEC
-119,LSU,Tigers,,,12,10,LSU,SEC
-120,Mississippi State,Bulldogs,,,12,10,MSU,SEC
-121,Ole Miss,Rebels,,,12,10,,SEC
-122,Texas A&M,Aggies,,,12,10,,SEC
-123,Army,Black Knights,,,,6,,Independent
-124,BYU,Cougars,,,,6,BYU,Independent
-125,Liberty,Flames,,,,6,LU,Independent
-126,New Mexico State,Aggies,,,,6,NMSU,Independent
-127,Notre Dame,Fighting Irish,,,,6,,Independent
-128,UConn,Huskies,,,,6,,Independent
-129,UMass,Minutemen,,,,6,,Independent
-130,Stanford,Cardinal,,,,9,,Pac-12
-131,UCLA,Bruins,,,,9,UCLA,Pac-12
+id,school_name,nickname,ranking,owned_id,division_name,conference_name,school_abbrev,conference_abbrev
+1,Cincinnati,Bearcats,,,,American Athletic Conference,,AAC
+2,East Carolina,Pirates,,,,American Athletic Conference,,AAC
+3,Houston,Cougars,,,,American Athletic Conference,,AAC
+4,Memphis,Tigers,,,,American Athletic Conference,,AAC
+5,Navy,Midshipmen,,,,American Athletic Conference,,AAC
+6,Southern Methodist University,Mustangs,,,,American Athletic Conference,SMU,AAC
+7,South Florida,Bulls,,,,American Athletic Conference,,AAC
+8,Temple,Owls,,,,American Athletic Conference,,AAC
+9,Tulane,Green Wave,,,,American Athletic Conference,,AAC
+10,Tulsa,Golden Hurricane,,,,American Athletic Conference,,AAC
+11,University of Central Florida,Knights,,,,American Athletic Conference,UCF,AAC
+12,Appalachian State,Mountaineers,,,East,Sun Belt Conference,,Sun Belt
+13,Coastal Carolina,Chanticleers,,,East,Sun Belt Conference,CCU,Sun Belt
+14,Georgia Southern,Eagles,,,East,Sun Belt Conference,,Sun Belt
+15,Georgia State,Panthers,,,East,Sun Belt Conference,,Sun Belt
+16,James Madison,Dukes,,,East,Sun Belt Conference,JMU,Sun Belt
+17,Marshall,Thundering Herd,,,East,Sun Belt Conference,,Sun Belt
+18,Old Dominion,Monarchs,,,East,Sun Belt Conference,ODU,Sun Belt
+19,Arkansas State,Red Wolves,,,West,Sun Belt Conference,,Sun Belt
+20,Louisiana,Ragin' Cajuns,,,West,Sun Belt Conference,ULL,Sun Belt
+21,Lousiana-Monroe,Warhawks,,,West,Sun Belt Conference,ULM,Sun Belt
+22,South Alabama,Jaguars,,,West,Sun Belt Conference,USA,Sun Belt
+23,Southern Miss,Golden Eagles,,,West,Sun Belt Conference,,Sun Belt
+24,Texas State,Bobcats,,,West,Sun Belt Conference,,Sun Belt
+25,Troy,Trojans,,,West,Sun Belt Conference,,Sun Belt
+26,Boston College,Eagles,,,Atlantic,Atlantic Coast Conference,,ACC
+27,Clemson,Tigers,,,Atlantic,Atlantic Coast Conference,,ACC
+28,Florida State,Seminoles,,,Atlantic,Atlantic Coast Conference,FSU,ACC
+29,Louisville,Cardinals,,,Atlantic,Atlantic Coast Conference,,ACC
+30,NS State,Wolfpack,,,Atlantic,Atlantic Coast Conference,,ACC
+31,Syracuse,Orange,,,Atlantic,Atlantic Coast Conference,,ACC
+32,Wake Forest,Demon Deacons,,,Atlantic,Atlantic Coast Conference,WF,ACC
+33,Duke,Blue Devils,,,Coastal,Atlantic Coast Conference,,ACC
+34,Georgia Tech,Yellow Jackets,,,Coastal,Atlantic Coast Conference,GT,ACC
+35,Miami (FL),Hurricanes,,,Coastal,Atlantic Coast Conference,UM,ACC
+36,North Carolina,Tarheels,,,Coastal,Atlantic Coast Conference,UNC,ACC
+37,Pittsburgh,Panthers,,,Coastal,Atlantic Coast Conference,Pitt,ACC
+38,Virginia,Cavaliers,,,Coastal,Atlantic Coast Conference,UV,ACC
+39,Virginia Tech,Hokies,,,Coastal,Atlantic Coast Conference,VT,ACC
+40,Indiana,Hoosiers,,,East,Big Ten Conference,IU,Big Ten
+41,Maryland,Terrapins,,,East,Big Ten Conference,,Big Ten
+42,Michigan,Wolverines,,,East,Big Ten Conference,UM,Big Ten
+43,Michigan State,Spartans,,,East,Big Ten Conference,MSU,Big Ten
+44,Ohio State,Buckeyes,,,East,Big Ten Conference,OSU,Big Ten
+45,Penn State,Nittany Lions,,,East,Big Ten Conference,PSU,Big Ten
+46,Rutgers,Scarlet Knights,,,East,Big Ten Conference,,Big Ten
+47,Illinois,Fighting Illini,,,West,Big Ten Conference,,Big Ten
+48,Iowa,Hawkeyes,,,West,Big Ten Conference,,Big Ten
+49,Minnesota,Golden Gophers,,,West,Big Ten Conference,,Big Ten
+50,Nebraska,Cornhuskers,,,West,Big Ten Conference,,Big Ten
+51,Northwestern,Wildcats,,,West,Big Ten Conference,,Big Ten
+52,Purdue,Boilermakers,,,West,Big Ten Conference,,Big Ten
+53,Wisconsin,Badgers,,,West,Big Ten Conference,,Big Ten
+54,Baylor,Bears,,,,Big 12 Conference,,Big 12
+55,Iowa State,Cyclones,,,,Big 12 Conference,ISU,Big 12
+56,Kansas,Jayhawks,,,,Big 12 Conference,,Big 12
+57,Kansas State,Wildcats,,,,Big 12 Conference,KSU,Big 12
+58,Oklahoma,Sooners,,,,Big 12 Conference,OU,Big 12
+59,Oklahoma State,Cowboys,,,,Big 12 Conference,OSU,Big 12
+60,Texas Christian University,Horned Frogs,,,,Big 12 Conference,TCU,Big 12
+61,Texas,Longhorns,,,,Big 12 Conference,UT,Big 12
+62,Texas Tech,Red Raiders,,,,Big 12 Conference,TTU,Big 12
+63,West Virginia,Mountaineers,,,,Big 12 Conference,WVU,Big 12
+64,Charlotte,49ers,,,,Conference USA,,C-USA
+65,FIU,Panthers,,,,Conference USA,FIU,C-USA
+66,Florida Atlantic,Owls,,,,Conference USA,FAU,C-USA
+67,Louisiana Tech,Bulldogs,,,,Conference USA,LT,C-USA
+68,Middle Tennessee,Blue Raiders,,,,Conference USA,MTSU,C-USA
+69,North Texas,Mean Green,,,,Conference USA,UNT,C-USA
+70,Rice,Owls,,,,Conference USA,,C-USA
+71,UAB,Blazers,,,,Conference USA,UAB,C-USA
+72,UTEP,Miners,,,,Conference USA,UTEP,C-USA
+73,UTSA,Roadrunners,,,,Conference USA,UTSA,C-USA
+74,Western Kentucky,Hilltoppers,,,,Conference USA,WKU,C-USA
+75,Akron,Zips,,,East,Mid-American Conference,,MAC
+76,Bowling Green,Falcons,,,East,Mid-American Conference,,MAC
+77,Buffalo,Bulls,,,East,Mid-American Conference,,MAC
+78,Kent State,Golden Flashes,,,East,Mid-American Conference,,MAC
+79,Miami (OH),Redhawks,,,East,Mid-American Conference,,MAC
+80,Ohio,Bobcats,,,East,Mid-American Conference,,MAC
+81,Ball State,Cardinals,,,West,Mid-American Conference,,MAC
+82,Central Michigan,Chippewas,,,West,Mid-American Conference,CMU,MAC
+83,Eastern Michigan,Eagles,,,West,Mid-American Conference,EMU,MAC
+84,Northern Illinois,Huskies,,,West,Mid-American Conference,NIU,MAC
+85,Toledo,Rockets,,,West,Mid-American Conference,,MAC
+86,Western Michigan,Broncos,,,West,Mid-American Conference,WMU,MAC
+87,Air Force,Falcons,,,Mountain,Mountain West Conference,,MWC
+88,Boise State,Broncos,,,Mountain,Mountain West Conference,,MWC
+89,Colorado State,Rams,,,Mountain,Mountain West Conference,CSU,MWC
+90,New Mexico,Lobos,,,Mountain,Mountain West Conference,,MWC
+91,Utah State,Aggies,,,Mountain,Mountain West Conference,USU,MWC
+92,Wyoming,Cowboys,,,Mountain,Mountain West Conference,,MWC
+93,Fresno State,Bulldogs,,,West,Mountain West Conference,,MWC
+94,Hawaii,Rainbow Warriors,,,West,Mountain West Conference,,MWC
+95,Nevada,Wolf Pack,,,West,Mountain West Conference,,MWC
+96,San Diego State,Aztecs,,,West,Mountain West Conference,SDSU,MWC
+97,San Jose State,Spartans,,,West,Mountain West Conference,SJSU,MWC
+98,UNLV,Rebels,,,West,Mountain West Conference,UNLV,MWC
+99,Arizona,Wildcats,,,,Pac-12 Conference,AU,Pac-12
+100,Arizona State,Sun Devils,,,,Pac-12 Conference,ASU,Pac-12
+101,California,Golden Bears,,,,Pac-12 Conference,Cal,Pac-12
+102,Colorado,Buffaloes,,,,Pac-12 Conference,CU,Pac-12
+103,Oregon,Ducks,,,,Pac-12 Conference,,Pac-12
+104,Oregon State,Beavers,,,,Pac-12 Conference,OSU,Pac-12
+105,USC,Trojans,,,,Pac-12 Conference,USC,Pac-12
+106,Utah,Utes,,,,Pac-12 Conference,,Pac-12
+107,Washington,Huskies,,,,Pac-12 Conference,UW,Pac-12
+108,Washington State,Cougars,,,,Pac-12 Conference,WSU,Pac-12
+109,Florida,Gators,,,East,Southeastern Conference,UF,SEC
+110,Georgia,Bulldogs,,,East,Southeastern Conference,UG,SEC
+111,Kentucky,Wildcats,,,East,Southeastern Conference,UK,SEC
+112,Missouri,Tigers,,,East,Southeastern Conference,,SEC
+113,South Carolina,Gamecocks,,,East,Southeastern Conference,USC,SEC
+114,Tennessee,Volunteers,,,East,Southeastern Conference,,SEC
+115,Vanderbilt,Commodores,,,East,Southeastern Conference,,SEC
+116,Alabama,Crimson Tide,,,West,Southeastern Conference,,SEC
+117,Arkansas,Razorbacks,,,West,Southeastern Conference,,SEC
+118,Auburn,Tigers,,,West,Southeastern Conference,,SEC
+119,LSU,Tigers,,,West,Southeastern Conference,LSU,SEC
+120,Mississippi State,Bulldogs,,,West,Southeastern Conference,MSU,SEC
+121,Ole Miss,Rebels,,,West,Southeastern Conference,,SEC
+122,Texas A&M,Aggies,,,West,Southeastern Conference,,SEC
+123,Army,Black Knights,,,,FBS Independents,,Independent
+124,BYU,Cougars,,,,FBS Independents,BYU,Independent
+125,Liberty,Flames,,,,FBS Independents,LU,Independent
+126,New Mexico State,Aggies,,,,FBS Independents,NMSU,Independent
+127,Notre Dame,Fighting Irish,,,,FBS Independents,,Independent
+128,UConn,Huskies,,,,FBS Independents,,Independent
+129,UMass,Minutemen,,,,FBS Independents,,Independent
+130,Stanford,Cardinal,,,,Pac-12 Conference,,Pac-12
+131,UCLA,Bruins,,,,Pac-12 Conference,UCLA,Pac-12

@@ -8,6 +8,7 @@
     <title>CFC Draft</title>
     <script src="https://unpkg.com/vue@3"></script>
     <script src="https://cdn.tailwindcss.com/"></script>
+    {% load static %}
 
     <!-- <style>
         .grid-container {
@@ -26,25 +27,25 @@
 </head>
 
 <body>
-    <header class="fixed w-full bg-red-400 py-3 px-10 flex justify-between items-center background-image: url(C:\Users\adam\Desktop\Coding\CollegeFootballChallenge\images\yard_line_image.jpg)">
-        <h3 class="text-lg">College Football Challenge || DRAFT
-            <a href="{% url 'draft:rules' %}" class="text-base pl-48">Rules</a>
-            <a href="" class="text-base pl-8">Current Roster</a>
-            <a href="" class="text-base pl-8">Big Board</a>
+    <header class="fixed w-full font-medium bg-green-400 py-3 px-10 flex justify-between items-center">
+        <h3 class="text-lg font-medium">College Football Challenge || DRAFT
+            <a href="{% url 'draft:rules' %}" class="text-base font-medium pl-48">Rules</a>
+            <a href="" class="text-base font-medium pl-8">Current Roster</a>
+            <a href="" class="text-base font-medium pl-8">Big Board</a>
         </h3>
             <div>
                 {% if request.user.is_authenticated %}
                 <Span>Welcome, {{ user.username }}</Span>
                 <a href="{% url 'players:logout' %}" class="
                               px-2 py-1 border-black border-2 rounded-md
-                              hover:bg-white-800 hover:text-zinc ml-1 text-xs">Log Out</a>
+                              hover:bg-white-800 hover:text-zinc ml-1 text-xs font-medium bg-green-400/50">Log Out</a>
                 {% else %}
                 <a href="{% url 'players:signup' %}" class="
                           px-2 py-1 border-black border-2 rounded-md
-                          hover:bg-white-800 hover:text-zinc ml-1 text-xs">Sign Up</a>
+                          hover:bg-white-800 hover:text-zinc ml-1 text-xs font-mediumn bg-green-400/50">Sign Up</a>
                 <a href="{% url 'players:login' %}" class="
                           px-2 py-1 border-black border-2 rounded-md
-                          hover:bg-white-800 hover:text-zinc ml-1 text-xs">Log In</a>
+                          hover:bg-white-800 hover:text-zinc ml-1 text-xs font-medium bg-green-400/50">Log In</a>
                 {% endif %}
             </div>        
         {% if message %}
@@ -127,7 +128,7 @@
         <div class="grid-item">49</div>
         <div class="grid-item">50</div>
     </div> -->
-    <div class="pt-20 pl-16 pr-16">
+    <div class="pt-20 pl-16 pr-16 pb-10" style="background-image: url({% static 'yard_line_image.jpg' %}); background-size: cover;">
         <table class="min-w-full divide-y divide-gray-600 border border-gray-800">
             <thead class="bg-gray-50">
                 <tr class="divide-x divide-gray-500">
@@ -215,7 +216,7 @@
         </ul>
     </main>
 
-    <footer class="w-full h-10 bg-red-500 bottom-0 items-center mt-1 text-sm">
+    <footer class="w-full h-10 bg-green-500 bottom-0 items-center mt-1 text-sm">
         <p class="text-black text-center pt-2">2012 &copy College Football Challenge &trade;
             <a href="/admin/" class="underline ml-10">admin</a></p>
     </footer>

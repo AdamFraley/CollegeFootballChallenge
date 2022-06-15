@@ -1,4 +1,3 @@
-from __future__ import division
 from django.core.management.base import BaseCommand
 from cfc_app.models import FbsTeam, Conference, Division
 

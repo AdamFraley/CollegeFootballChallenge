@@ -6,91 +6,219 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rules || CFC</title>
     <script src="https://cdn.tailwindcss.com/"></script>
+    {% load static %}
+
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: auto auto;
+            padding: 2px;
+          }
+          .grid-item {
+            background-color: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(0, 0, 0, 0.8);
+            padding: 2px;
+            font-size: 15px;
+            text-align: center;
+          }
+        </style>
 
 </head>
 
+<header class="fixed w-full font-medium bg-green-400 py-3 px-10 flex justify-between items-center">
+    <h3 class="text-lg font-medium">College Football Challenge || RULES
+        <a href="{% url 'draft:home' %}" class="text-base font-medium pl-48">Draft</a>
+        <a href="" class="text-base font-medium pl-8">Current Roster</a>
+        <a href="" class="text-base font-medium pl-8">Big Board</a>
+    </h3>
+        <div>
+            <a href="{% url 'draft:home' %}" class="
+                        px-2 py-1 border-black border-2 rounded-md
+                        hover:bg-white-800 hover:text-zinc ml-1 text-xs font-medium bg-green-400/50">Home</a>
+            {% if request.user.is_authenticated %}
+            <Span>Welcome, {{ user.username }}</Span>
+            <a href="{% url 'players:logout' %}" class="
+                          px-2 py-1 border-black border-2 rounded-md
+                          hover:bg-white-800 hover:text-zinc ml-1 text-xs font-medium bg-green-400/50">Log Out</a>
+            {% else %}
+            <a href="{% url 'players:signup' %}" class="
+                      px-2 py-1 border-black border-2 rounded-md
+                      hover:bg-white-800 hover:text-zinc ml-1 text-xs font-mediumn bg-green-400/50">Sign Up</a>
+            <a href="{% url 'players:login' %}" class="
+                      px-2 py-1 border-black border-2 rounded-md
+                      hover:bg-white-800 hover:text-zinc ml-1 text-xs font-medium bg-green-400/50">Log In</a>
+            {% endif %}
+        </div>        
+    {% if message %}
+        <p>{{ message }}</p>
+    {% endif %}
+</header>
+
 <body>
 
-    <section class="text-gray-600 body-font">
-        <div class="container px-5 py-24 mx-auto">
-          <div class="flex flex-wrap w-full mb-20 flex-col items-center text-center">
-            <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">Pitchfork Kickstarter Taxidermy</h1>
-            <p class="lg:w-1/2 w-full leading-relaxed text-gray-500">Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify, subway tile poke farm-to-table.</p>
-          </div>
-          <div class="flex flex-wrap -m-4">
-            <div class="xl:w-1/3 md:w-1/2 p-4">
-              <div class="border border-gray-200 p-6 rounded-lg">
-                <div class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4">
-                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-6 h-6" viewBox="0 0 24 24">
-                    <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
-                  </svg>
-                </div>
-                <h2 class="text-lg text-gray-900 font-medium title-font mb-2">Shooting Stars</h2>
-                <p class="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waist co, subway tile poke farm.</p>
-              </div>
-            </div>
-            <div class="xl:w-1/3 md:w-1/2 p-4">
-              <div class="border border-gray-200 p-6 rounded-lg">
-                <div class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4">
-                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-6 h-6" viewBox="0 0 24 24">
-                    <circle cx="6" cy="6" r="3"></circle>
-                    <circle cx="6" cy="18" r="3"></circle>
-                    <path d="M20 4L8.12 15.88M14.47 14.48L20 20M8.12 8.12L12 12"></path>
-                  </svg>
-                </div>
-                <h2 class="text-lg text-gray-900 font-medium title-font mb-2">The Catalyzer</h2>
-                <p class="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waist co, subway tile poke farm.</p>
-              </div>
-            </div>
-            <div class="xl:w-1/3 md:w-1/2 p-4">
-              <div class="border border-gray-200 p-6 rounded-lg">
-                <div class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4">
-                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-6 h-6" viewBox="0 0 24 24">
-                    <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
-                    <circle cx="12" cy="7" r="4"></circle>
-                  </svg>
-                </div>
-                <h2 class="text-lg text-gray-900 font-medium title-font mb-2">Neptune</h2>
-                <p class="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waist co, subway tile poke farm.</p>
-              </div>
-            </div>
-            <div class="xl:w-1/3 md:w-1/2 p-4">
-              <div class="border border-gray-200 p-6 rounded-lg">
-                <div class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4">
-                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-6 h-6" viewBox="0 0 24 24">
-                    <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1zM4 22v-7"></path>
-                  </svg>
-                </div>
-                <h2 class="text-lg text-gray-900 font-medium title-font mb-2">Melanchole</h2>
-                <p class="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waist co, subway tile poke farm.</p>
-              </div>
-            </div>
-            <div class="xl:w-1/3 md:w-1/2 p-4">
-              <div class="border border-gray-200 p-6 rounded-lg">
-                <div class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4">
-                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-6 h-6" viewBox="0 0 24 24">
-                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
-                  </svg>
-                </div>
-                <h2 class="text-lg text-gray-900 font-medium title-font mb-2">Bunker</h2>
-                <p class="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waist co, subway tile poke farm.</p>
-              </div>
-            </div>
-            <div class="xl:w-1/3 md:w-1/2 p-4">
-              <div class="border border-gray-200 p-6 rounded-lg">
-                <div class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4">
-                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-6 h-6" viewBox="0 0 24 24">
-                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                  </svg>
-                </div>
-                <h2 class="text-lg text-gray-900 font-medium title-font mb-2">Ramona Falls</h2>
-                <p class="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waist co, subway tile poke farm.</p>
-              </div>
-            </div>
-          </div>
-          <button class="flex mx-auto mt-16 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Button</button>
+    <section class="text-gray-600 body-font bg-slate-100">
+        <div class="container px-5 py-20 mx-auto">
+          <div class="flex flex-wrap w-full mb-6 flex-col items-center text-center">
+            <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">College Football Challenge</h1>
+            <p class="lg:w-1/2 w-full leading-relaxed text-gray-500">Rules and Game Play</p>
         </div>
-      </section>
+
+        <hr>
+
+        <div class="flex flex-wrap">
+          <div class="xl:w-1/4 lg:w-1/2 md:w-full px-8 py-6 border-l-2 border-gray-200 border-opacity-60">
+            <h2 class="text-lg sm:text-xl text-gray-900 font-medium title-font mb-2 underline">DRAFT TEAMS</h2>
+            <p class="leading-relaxed text-base mb-2">Each player drafts 8 teams. The draft is done "snake style".</p>
+            <p class="leading-relaxed text-base mb-4">The draft order reverses each round so the player with the first pick in the previous round has the last pick in the next round.</p>
+            <h2 class="text-lg sm:text-xl text-gray-900 font-medium title-font mb-2 underline">PLAY YOUR TEAMS</h2>
+            <p class="leading-relaxed text-base mb-2">Each player is alloted 6 "active spots" per week, where teams score points for wins. 
+                The first active spot is the "double down" or "2x" spot and scores double points for a win. Each Team can only be placed in the 2x spot twice per season.</p>
+            <p class="leading-relaxed text-base mb-4">The AP ranking of the team, the team's opponent and location of the game are used to calculate scores for the game.</p>
+          </div>
+
+          <div class="xl:w-1/4 lg:w-1/2 md:w-full px-8 py-6 border-l-2 border-gray-200 border-opacity-60">
+            <h2 class="text-lg sm:text-xl text-gray-900 font-medium title-font mb-2 underline">SCORING</h2>
+            <p class="leading-relaxed text-base mb-4">Teams in the "active spots" earn a base score for wins and for schedule strength and upsets bonus points.</p>
+            <p class="leading-relaxed text-base text-center font-medium">Base Game Score</p>
+            <div class="grid-container pt-0">
+                <div class="grid-item bg-amber-300 font-medium">LOCATION</div>
+                <div class="grid-item bg-amber-300 font-medium">POINTS</div>
+                <div class="grid-item">Home Win</div>
+                <div class="grid-item">4</div>
+                <div class="grid-item">Road Win</div>
+                <div class="grid-item">6</div>
+                <div class="grid-item">Neutral Site</div>
+                <div class="grid-item">5</div>
+            </div>
+            <p class="leading-relaxed text-base text-center font-medium pt-4">Schedule Strength Score</p>
+            <div class="grid-container pt-0">
+                <div class="grid-item bg-sky-300 font-medium">Opponent AP Rank</div>
+                <div class="grid-item bg-sky-300 font-medium">POINTS</div>
+                <div class="grid-item">Any FCS opponent</div>
+                <div class="grid-item">-2</div>
+                <div class="grid-item">AP 21-25</div>
+                <div class="grid-item">2</div>
+                <div class="grid-item">AP 16-20</div>
+                <div class="grid-item">3</div>
+                <div class="grid-item">AP 11-15</div>
+                <div class="grid-item">4</div>
+                <div class="grid-item">AP  6-10</div>
+                <div class="grid-item">5</div>
+                <div class="grid-item">AP  1-5</div>
+                <div class="grid-item">6</div>
+            </div>
+            <p class="leading-relaxed text-base text-center font-medium pt-4">Upset Bonus Points</p>
+            <div class="grid-container pt-0">
+                <div class="grid-item bg-rose-300 font-medium">AP Rank Differential</div>
+                <div class="grid-item bg-rose-300 font-medium">POINTS</div>
+                <div class="grid-item">10-14 Spots Higher</div>
+                <div class="grid-item">2</div>
+                <div class="grid-item">15-24 Spots Higher *</div>
+                <div class="grid-item">4</div>
+                <div class="grid-item">Unranked Over AP Top 5</div>
+                <div class="grid-item">6</div>
+            </div>
+            <span class="text-xs">* Opponent must be in AP Top 15</span>
+          </div>
+
+          <div class="xl:w-1/4 lg:w-1/2 md:w-full px-8 py-6 border-l-2 border-gray-200 border-opacity-60">
+            <h2 class="text-lg sm:text-xl text-gray-900 font-medium title-font mb-2 underline">DOUBLE DOWN BONUS</h2>
+            <p class="leading-relaxed text-base mb-2">Every week, players may double the game score and 
+                schedule strength bonus of one team of their choosing by playing the team in the "2x" slot.
+                (Upset and ranking bonuses are not doubled)
+            </p>
+            <p class="leading-relaxed text-base mb-2">2x spots are not transferrable to other players</p>
+            <p class="leading-relaxed text-base mb-4">Each team may be put in the 2x slot only twice per season.
+                Doubles of a team follow with the team when they are dropped or traded.
+            </p>
+            <h2 class="text-lg sm:text-xl text-gray-900 font-medium title-font mb-2 underline">RANKING BONUS</h2>
+            <p class="leading-relaxed text-base mb-4">After each week's games, teams earn points for their standing in the
+                weekly AP Poll</p>
+            <p class="leading-relaxed text-base text-center font-medium pt-0">Ranking Bonus Points</p>
+            <div class="grid-container pt-0">
+                <div class="grid-item bg-purple-400 font-medium">AP Rank</div>
+                <div class="grid-item bg-purple-400 font-medium">POINTS</div>
+                <div class="grid-item">16-25</div>
+                <div class="grid-item">1</div>
+                <div class="grid-item">6-15</div>
+                <div class="grid-item">2</div>
+                <div class="grid-item">1-5</div>
+                <div class="grid-item">3</div>
+            </div>
+          </div>
+          
+          <div class="xl:w-1/4 lg:w-1/2 md:w-full px-8 py-6 border-l-2 border-gray-200 border-opacity-60">
+            <h2 class="text-lg sm:text-xl text-gray-900 font-medium title-font mb-2 underline">POST SEASON SCORING</h2>
+            <p class="leading-relaxed text-base mb-2"> Teams earn points for Conference Championships, Conference Champion Runner-up, Bowl Wins, and Playoff Appearances.</p>
+            <p class="leading-relaxed text-base mb-2"> Teams also collect ranking bonuses for their standing in the Final AP Poll.</p>
+            <p class="leading-relaxed text-base text-center font-medium pt-4">Post Season Points</p>
+
+            
+            <div class="grid-container pt-0">
+                <div class="grid-item bg-red-400 font-medium">ACHIEVEMENT</div>
+                <div class="grid-item bg-red-400 font-medium">POINTS</div>
+                <div class="grid-item">Conference Champions
+                    <p class="text-xs">Points are not split in the event of a tie, conference tie break rules are followed.</p>
+                </div>
+                <div class="grid-item">20</div>
+                <div class="grid-item">Conference 2nd Place
+                    <p class="text-xs">Points are split in the event of a tie and no championship game</p>
+                </div>
+                <div class="grid-item">10</div>
+                <div class="grid-item">At-Large NY6 Bowl Invitation
+                    <p class="text-xs">Any team invited to a NY6 Bowl without winning a P5 Conference</p>
+                </div>
+                <div class="grid-item">6</div>
+                <div class="grid-item">Bowl Win</div>
+                <div class="grid-item">10</div>
+                <div class="grid-item">CFP Invitation</div>
+                <div class="grid-item">10</div>
+                <div class="grid-item">CFP Playoff Win</div>
+                <div class="grid-item">11</div>
+            </div>
+
+        </div>
+
+      </div>
+
+      <hr>
+
+      <div class="flex flex-wrap">
+        <div class="xl:w-1/2 lg:w-1/2 md:w-full px-8 py-6 border-l-2 border-gray-200 border-opacity-60">
+          <h2 class="text-lg sm:text-xl text-gray-900 font-medium title-font mb-2 underline">TRADES</h2>
+          <p class="leading-relaxed text-base mb-2">Trades are permitted between Monday and Friday each week. Trades must be approved by the 
+              commissioner prior. The group as a whole can also void a trade if a majority of players not involved object.
+          </p>
+          <p class="leading-relaxed text-base mb-4">Draft picks may be traded at anytime prior to a players turn ending, 
+              but the trade must be approved by the commissioner</p>
+        </div>
+
+        <div class="xl:w-1/2 lg:w-1/2 md:w-full px-8 py-6 border-l-2 border-gray-200 border-opacity-60">
+          <h2 class="text-lg sm:text-xl text-gray-900 font-medium title-font mb-2 underline">WAIVER WIRE DRAFT</h2>
+          <p class="leading-relaxed text-base mb-2">Each weekend, players who wish to pick unowned teams declare for the waiver wire draft.</p>
+          <p class="leading-relaxed text-base mb-4">Those who have declared for the waiver wire will pick in reverse order of overall standings
+            beginning Monday at 9am. Players have 6 hours to make an add/drop. The Waiver Wire draft will not have a limited number of rounds 
+            but must conclude by noon on Thursday. Player who wish to pick again must declare their interest and allow 6 hours for others 
+            to declare or make a pick. If someone misses the first round of the Waiver Wire a simple declaration will put them in the front of 
+            any second round picks.</p>
+        </div>
+
+    </div>
+
+    <hr>
+
+    </section>
+
     
 </body>
+
+<footer class="w-full h-10 bg-green-500 bottom-0 items-center mt-1 text-sm">
+    <p class="text-black text-center pt-2">2012 &copy College Football Challenge &trade;
+        <a href="/admin/" class="underline ml-10">admin</a></p>
+</footer>
+
 </html>
+
+
+<!-- License: MIT. Made by Icons8: https://github.com/icons8/line-awesome -->
+<!-- <svg width="32px" height="32px" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M 21.03125 4 C 20.292969 4.015625 19.515625 4.085938 18.71875 4.21875 C 15.53125 4.75 11.960938 6.28125 9.09375 9.09375 C 6.277344 11.964844 4.75 15.550781 4.21875 18.75 C 3.6875 21.949219 3.996094 24.808594 5.59375 26.40625 C 7.183594 27.996094 10.046875 28.332031 13.25 27.8125 C 16.453125 27.292969 20.035156 25.777344 22.90625 22.90625 C 25.726563 20.085938 27.25 16.515625 27.78125 13.3125 C 28.3125 10.109375 28.007813 7.230469 26.4375 5.59375 L 26.40625 5.59375 L 26.40625 5.5625 C 25.589844 4.78125 24.441406 4.335938 23.125 4.125 C 22.464844 4.019531 21.769531 3.984375 21.03125 4 Z M 21.03125 6.03125 C 21.664063 6.03125 22.257813 6.070313 22.78125 6.15625 C 23.808594 6.328125 24.578125 6.640625 24.96875 7 C 24.976563 7.007813 24.992188 7.023438 25 7.03125 C 25.722656 7.816406 26.277344 10.199219 25.8125 13 C 25.34375 15.824219 23.980469 19.019531 21.5 21.5 C 18.96875 24.03125 15.757813 25.386719 12.9375 25.84375 C 10.117188 26.300781 7.710938 25.710938 7 25 C 6.296875 24.296875 5.71875 21.886719 6.1875 19.0625 C 6.65625 16.238281 8.015625 13.03125 10.5 10.5 C 13.03125 8.015625 16.21875 6.65625 19.03125 6.1875 C 19.734375 6.070313 20.398438 6.03125 21.03125 6.03125 Z M 21.28125 9.28125 L 19 11.5625 L 17.21875 9.78125 L 15.78125 11.21875 L 17.5625 13 L 16 14.5625 L 14.21875 12.78125 L 12.78125 14.21875 L 14.5625 16 L 13 17.5625 L 11.21875 15.78125 L 9.78125 17.21875 L 11.5625 19 L 9.28125 21.28125 L 10.71875 22.71875 L 13 20.4375 L 14.78125 22.21875 L 16.21875 20.78125 L 14.4375 19 L 16 17.4375 L 17.78125 19.21875 L 19.21875 17.78125 L 17.4375 16 L 19 14.4375 L 20.78125 16.21875 L 22.21875 14.78125 L 20.4375 13 L 22.71875 10.71875 Z"/></svg> -->

@@ -14,7 +14,13 @@ def index(request):
     message = request.GET.get('message')
     draft = Draft.objects.first()
     players = draft.players.order_by('draft_order')
-
+    current_pick = draft.current_pick
+    pick = None
+    if current_pick < 57 and draft.live:
+        pick = Pick.objects.get(pick_number=draft.current_pick)
+        users_turn = pick.player == request.user
+    else:
+        users_turn = False
 
     context = {
         'teams' : teams,
@@ -23,6 +29,9 @@ def index(request):
         'message' : message,
         'players' : players,
         'draft' : draft,
+        'users_turn' : users_turn,
+        'current_pick' : current_pick,
+        'pick' : pick,
     }
 
     print(request.GET.get('message'))
@@ -33,25 +42,31 @@ def select(request,id):
     selected_team = FbsTeam.objects.get(id=id)
     draft = Draft.objects.first()
     pick = Pick.objects.get(pick_number=draft.current_pick)
+    teams_owned = FbsTeam.objects.filter(owned__isnull=False).count()
 
-    if not request.user.is_superuser:
-        if pick.player != request.user:
-            return redirect('/?message=Its+not+your+turn')
-
-        selected_team.owned = request.user
-        selected_team.save()
-        pick.team = selected_team
-        pick.save()
-        draft.current_pick += 1
-        draft.save()
-        print(selected_team)
+    if teams_owned == 56:
         return redirect('draft:home')
     else:
-        return redirect('/?message=admin+cannot+select+teams')
+        if not request.user.is_superuser:
+            if pick.player != request.user:
+                return redirect('/?message=Its+not+your+turn')
+
+            selected_team.owned = request.user
+            selected_team.save()
+            pick.team = selected_team
+            pick.save()
+            draft.current_pick += 1
+            draft.save()
+            print(selected_team)
+            return redirect('draft:home')
+        else:
+            return redirect('/?message=admin+cannot+select+teams')
 
 @user_passes_test(lambda u: u.is_superuser)
 def create_draft(request):
     draft = Draft.objects.first()
+    draft.live = True
+    draft.save()
     draft.create_draft_order()
     return redirect('draft:home')
 
@@ -73,7 +88,7 @@ def reset_draft(request):
     FbsTeam.objects.update(owned=None)
     Pick.objects.update(team=None)
     User.objects.update(draft_order=None)
-    Draft.objects.update(current_pick=1)
+    Draft.objects.update(current_pick=1, live=False)
     Pick.objects.all().delete()
     return redirect('draft:home')
 
@@ -92,3 +107,12 @@ def undo_last_pick(request):
 
 def rules(request):
     return render (request, 'cfc_app/rules.html')
+
+@user_passes_test(lambda u: u.is_superuser, '/?message=YOU+cant+reset+the+draft+order')
+def draft_end_test(request):
+    teams_owned = FbsTeam.objects.filter(owned__isnull=False).count()
+    print(teams_owned)
+    return HttpResponse('testing number of owned teams')
+
+def roster(request):
+    return HttpResponse('Current Roster goes here')

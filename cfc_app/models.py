@@ -50,6 +50,7 @@ class Pick(models.Model):
 class Draft(models.Model):
     players = models.ManyToManyField(User)
     current_pick = models.IntegerField(default=1)
+    live = models.BooleanField(default=False)
 
     def create_draft_order(self):
         from random import shuffle

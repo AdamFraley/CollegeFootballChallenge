@@ -128,3 +128,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL =  'players.User'
 
 LOGIN_REDIRECT_URL = '/players/login/'
+
+import django_on_heroku
+django_on_heroku.settings(locals())

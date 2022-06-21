@@ -115,4 +115,15 @@ def draft_end_test(request):
     return HttpResponse('testing number of owned teams')
 
 def roster(request):
-    return HttpResponse('Current Roster goes here')
+    teams = FbsTeam.objects.all()
+    draft = Draft.objects.first()
+    players = draft.players.order_by('draft_order')
+
+
+
+    context = {
+        teams : 'teams',
+        players : 'players',
+    }
+
+    return render (request, 'cfc_app/roster.html')

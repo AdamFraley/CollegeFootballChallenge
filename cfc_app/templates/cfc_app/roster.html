@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roster || CFC</title>
+    <script src="https://cdn.tailwindcss.com/"></script>
+
+</head>
+
+<header class="fixed w-full font-medium bg-green-400 py-3 px-10 flex justify-between items-center">
+    <h3 class="text-lg font-medium">College Football Challenge || ROSTER
+        <a href="{% url 'draft:home' %}" class="text-base font-medium pl-48">Draft</a>
+        <a href="{% url 'draft:rules' %}" class="text-base font-medium pl-8">Rules</a>
+        <a href="" class="text-base font-medium pl-8">Big Board</a>
+    </h3>
+        <div>
+            {% if request.user.is_authenticated %}
+            <Span>Welcome, {{ user.username }}</Span>
+            <a href="{% url 'players:logout' %}" class="
+            px-2 py-1 border-black border-2 rounded-md
+            hover:bg-white-800 hover:text-zinc ml-1 text-xs font-medium bg-green-400/50">Log Out</a>
+            {% else %}
+            <a href="{% url 'players:signup' %}" class="
+            px-2 py-1 border-black border-2 rounded-md
+            hover:bg-white-800 hover:text-zinc ml-1 text-xs font-mediumn bg-green-400/50">Sign Up</a>
+            <a href="{% url 'players:login' %}" class="
+            px-2 py-1 border-black border-2 rounded-md
+            hover:bg-white-800 hover:text-zinc ml-1 text-xs font-medium bg-green-400/50">Log In</a>
+            {% endif %}
+            <a href="{% url 'draft:home' %}" class="
+                        px-2 py-1 border-black border-2 rounded-md
+                        hover:bg-white-800 hover:text-zinc ml-1 text-xs font-medium bg-green-400/50">Home</a>
+        </div>    
+</header>
+
+<body>
+    <div class="py-20">
+        <h1 class="text-center">Current Roster where you can add/drop teams maybe trade</h1>
+    </div>
+
+    <div class="pt-4 pl-16 pr-16 pb-10">
+        <table class="min-w-full divide-y divide-gray-600 border border-gray-800">
+            <thead class="bg-gray-50">
+                <tr class="divide-x divide-gray-500">
+                    <th scope="col" class="py-2 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6">Name</th>
+                    <th scope="col" class="px-3 py-2 text-left text-sm font-semibold text-gray-900"></th>
+                    <th scope="col" class="px-3 py-2 text-left text-sm font-semibold text-gray-900"></th>
+                    <th scope="col" class="px-3 py-2 text-left text-sm font-semibold text-gray-900"></th>
+                    <th scope="col" class="px-3 py-2 text-left text-sm font-semibold text-gray-900"></th>
+                    <th scope="col" class="px-3 py-2 text-left text-sm font-semibold text-gray-900"></th>
+                    <th scope="col" class="px-3 py-2 text-left text-sm font-semibold text-gray-900"></th>
+                    <th scope="col" class="px-3 py-2 text-left text-sm font-semibold text-gray-900"></th>
+                    <th scope="col" class="px-3 py-2 text-left text-sm font-semibold text-gray-900"></th>
+                </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-400 bg-white">
+                {% for team in teams %}
+                    {% if team.owned %}
+                    <tr class="divide-x divide-gray-600">
+                        <td class="whitespace-nowrap py-1 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6 bg-amber-400">{{team.owned.username}}</td>
+                    {% endif %}
+                    </tr>
+                {% endfor %}
+
+            </tbody>
+
+    </div>
+
+    
+    
+</body>
+
+</html>

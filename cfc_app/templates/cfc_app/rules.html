@@ -32,22 +32,22 @@
         <a href="" class="text-base font-medium pl-8">Big Board</a>
     </h3>
         <div>
-            <a href="{% url 'draft:home' %}" class="
-                        px-2 py-1 border-black border-2 rounded-md
-                        hover:bg-white-800 hover:text-zinc ml-1 text-xs font-medium bg-green-400/50">Home</a>
             {% if request.user.is_authenticated %}
             <Span>Welcome, {{ user.username }}</Span>
             <a href="{% url 'players:logout' %}" class="
-                          px-2 py-1 border-black border-2 rounded-md
-                          hover:bg-white-800 hover:text-zinc ml-1 text-xs font-medium bg-green-400/50">Log Out</a>
+            px-2 py-1 border-black border-2 rounded-md
+            hover:bg-white-800 hover:text-zinc ml-1 text-xs font-medium bg-green-400/50">Log Out</a>
             {% else %}
             <a href="{% url 'players:signup' %}" class="
-                      px-2 py-1 border-black border-2 rounded-md
-                      hover:bg-white-800 hover:text-zinc ml-1 text-xs font-mediumn bg-green-400/50">Sign Up</a>
+            px-2 py-1 border-black border-2 rounded-md
+            hover:bg-white-800 hover:text-zinc ml-1 text-xs font-mediumn bg-green-400/50">Sign Up</a>
             <a href="{% url 'players:login' %}" class="
-                      px-2 py-1 border-black border-2 rounded-md
-                      hover:bg-white-800 hover:text-zinc ml-1 text-xs font-medium bg-green-400/50">Log In</a>
+            px-2 py-1 border-black border-2 rounded-md
+            hover:bg-white-800 hover:text-zinc ml-1 text-xs font-medium bg-green-400/50">Log In</a>
             {% endif %}
+            <a href="{% url 'draft:home' %}" class="
+                        px-2 py-1 border-black border-2 rounded-md
+                        hover:bg-white-800 hover:text-zinc ml-1 text-xs font-medium bg-green-400/50">Home</a>
         </div>        
     {% if message %}
         <p>{{ message }}</p>

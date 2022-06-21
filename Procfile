@@ -1,2 +1,2 @@
-web: gunicorn cfc_app.wsgi
+web: gunicorn cfc_config.wsgi
 release: python manage.py migrate

@@ -46,6 +46,8 @@ class Pick(models.Model):
 
     def __str__(self):
         return f'pick {self.pick_number} - {self.player.username} -> {self.team.school_name}' if self.team != None else f'pick {self.pick_number} - {self.player.username}'
+    class Meta:
+        ordering = ['id']
 
 class Draft(models.Model):
     players = models.ManyToManyField(User, blank=True)

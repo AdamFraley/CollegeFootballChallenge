@@ -7,7 +7,7 @@ import csv
 class Command(BaseCommand):
 
     def handle(self, *args, **options):
-        # print('fbsteams')
+        print('fbsteams')
 
         with open('csv/cfc_fbs.csv', 'r') as f:
             reader = csv.DictReader(f)

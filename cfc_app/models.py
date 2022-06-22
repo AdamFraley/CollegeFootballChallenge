@@ -48,7 +48,7 @@ class Pick(models.Model):
         return f'pick {self.pick_number} - {self.player.username} -> {self.team.school_name}' if self.team != None else f'pick {self.pick_number} - {self.player.username}'
 
 class Draft(models.Model):
-    players = models.ManyToManyField(User)
+    players = models.ManyToManyField(User, blank=True)
     current_pick = models.IntegerField(default=1)
     live = models.BooleanField(default=False)
 

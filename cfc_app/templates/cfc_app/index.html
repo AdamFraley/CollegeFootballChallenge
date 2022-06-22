@@ -39,7 +39,10 @@
     </header>   
     
 
-    <div class="pt-20 pl-16 pr-16 pb-10" style="background-image: url({% static 'yard_line_image.jpg' %}); background-size: cover;">
+    <div class="pt-16 pl-16 pr-16 pb-10" style="background-image: url({% static 'yard_line_image.jpg' %}); background-size: cover;">
+        {% if current_pick == 57 %}
+        <h1 class="text-center font-bold text-3xl pb-4">DRAFT 2022 COMPLETE</h1>
+        {% endif %}
         <table class="min-w-full divide-y divide-gray-600 border border-gray-800">
             <thead class="bg-gray-50">
                 <tr class="divide-x divide-gray-500">

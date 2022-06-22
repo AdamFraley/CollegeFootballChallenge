@@ -66,11 +66,14 @@ def select(request,id):
 def create_draft(request):
     draft = Draft.objects.first()
     players = list(draft.players.all())
-    # print(len(players))
-    draft.live = True
-    draft.save()
-    draft.create_draft_order()
-    return redirect('draft:home')
+    if len(players) == 7:
+        draft.live = True
+        draft.save()
+        draft.create_draft_order()
+        return redirect('draft:home')
+    else:
+        return redirect('/?message=DRAFT+MUST+HAVE+7+PLAYERS')
+
 
 @user_passes_test(lambda u: u.is_superuser, '/?message=resetting teams denied')
 def reset_teams_picks(request):

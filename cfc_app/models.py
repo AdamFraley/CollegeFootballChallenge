@@ -54,7 +54,7 @@ class Draft(models.Model):
 
     def create_draft_order(self):
         from random import shuffle
-        print(self.players.all())
+        # print(self.players.all())
         players = list(self.players.all())
         # print(len(players))
         # print(players)

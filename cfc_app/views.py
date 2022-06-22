@@ -65,6 +65,8 @@ def select(request,id):
 @user_passes_test(lambda u: u.is_superuser)
 def create_draft(request):
     draft = Draft.objects.first()
+    players = list(draft.players.all())
+    # print(len(players))
     draft.live = True
     draft.save()
     draft.create_draft_order()

@@ -30,6 +30,10 @@ class FbsTeam(models.Model):
 
     def __str__(self):
         return f'{self.school_name} - {self.owned}' if self.owned != None else f'{self.school_name}'
+    
+    class Meta:
+        ordering = ['id']
+
         
 class League(models.Model):
     name = models.CharField(max_length=25, blank=True, null=True)

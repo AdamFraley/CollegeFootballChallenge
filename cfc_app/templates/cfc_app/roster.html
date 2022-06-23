@@ -63,6 +63,9 @@
                             {% for team in player.teams.all %}
                             <td class="whitespace-nowrap px-3 py-1 text-sm text-gray-500">{{ team.school_name }}</td>
                             {% endfor %}
+                            {% if player.teams.count < 8 %}
+                            <td class="whitespace-nowrap px-3 py-1 text-sm text-gray-500"></td>
+                            {% endif %}
                         </tr>
                     {% endif %}
                 {% endfor %}                    
@@ -70,7 +73,7 @@
         </table>
     </div>
 
-    <main class="px-6 pt-4">
+    <main class="px-6 pt-4"> 
         <ul class="flex flex-wrap justify-evenly">
             {% for conference in conferences %}
             <li class="pt-1 mt-1 mb-1 border-solid border-4 rounded">

@@ -25,7 +25,7 @@ class FbsTeam(models.Model):
     conference_name = models.ForeignKey(Conference, on_delete=models.PROTECT, null=True, related_name='teams')
     division_name = models.ForeignKey(Division, on_delete=models.PROTECT, null= True, blank=True, related_name='teams')
     conference_abbrev = models.CharField(max_length=12)
-    owned = models.ForeignKey(User, on_delete=models.PROTECT, null=True, blank=True)
+    owned = models.ForeignKey(User, on_delete=models.PROTECT, null=True, blank=True, related_name='teams')
     ranking = models.IntegerField(null=True, blank=True)
 
     def __str__(self):

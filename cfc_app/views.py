@@ -62,6 +62,10 @@ def select(request,id):
         else:
             return redirect('/?message=admin+cannot+select+teams')
 
+# def drop_team(request,id):
+#     dropped_team = FbsTeam.objects.get(id=id)
+
+
 @user_passes_test(lambda u: u.is_superuser)
 def create_draft(request):
     draft = Draft.objects.first()
@@ -97,7 +101,7 @@ def reset_draft(request):
     Pick.objects.all().delete()
     return redirect('draft:home')
 
-@user_passes_test(lambda u: u.is_superuser, '/?message=YOU+cant+reset+the+draft+order')
+@user_passes_test(lambda u: u.is_superuser, '/?message=YOU+cant+undo+picks')
 def undo_last_pick(request):
     draft = Draft.objects.first()
     draft.current_pick -= 1
@@ -121,14 +125,18 @@ def draft_end_test(request):
 
 def roster(request):
     teams = FbsTeam.objects.all()
+    conferences = Conference.objects.all()
+    divisions = Division.objects.all()
     draft = Draft.objects.first()
     players = draft.players.order_by('draft_order')
-
-
+    print(players)
+    
 
     context = {
-        teams : 'teams',
-        players : 'players',
+        'teams' : teams,
+        'players' : players,
+        'conferences' : conferences,
+        'divisions' : divisions,
     }
 
-    return render (request, 'cfc_app/roster.html')
+    return render (request, 'cfc_app/roster.html', context)

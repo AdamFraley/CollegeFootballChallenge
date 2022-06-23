@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 
 from .models import Conference, Division, FbsTeam, Draft, Pick
 from players.models import User
@@ -140,3 +140,7 @@ def roster(request):
     }
 
     return render (request, 'cfc_app/roster.html', context)
+
+def draft_pick_check(request):
+    pick = Draft.objects.first().current_pick
+    return JsonResponse(data={'pick': pick})

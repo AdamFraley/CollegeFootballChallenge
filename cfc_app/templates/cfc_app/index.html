@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Draft || CFC</title>
     <script src="https://cdn.tailwindcss.com/"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     {% load static %}
 
 </head>
@@ -150,6 +151,19 @@
         <p class="text-black text-center pt-2">2012 &copy College Football Challenge &trade;
             <a href="/admin/" class="underline ml-10">admin</a></p>
     </footer>
+
+<script>
+    setInterval(function () {
+        axios({
+            url: '/draft-pick-check',
+            method: 'get',
+        }).then(res => {
+            if (res.data.pick != {{ draft.current_pick }}) {
+                location.reload()
+            }
+        })
+    }, 2000)
+</script>
 
 </body>
 

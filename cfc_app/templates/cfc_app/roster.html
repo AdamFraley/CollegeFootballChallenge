@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Roster || CFC</title>
     <script src="https://cdn.tailwindcss.com/"></script>
-
 
 </head>
 
@@ -38,11 +36,13 @@
 </header>
 
 <body>
+    <div class="py-20">
+        <h1 class="text-center">Current Roster where you can add/drop teams maybe trade</h1>
+    </div>
 
-    <div class="pt-16 pl-16 pr-16 pb-10">
-        <h1 class="text-center pb-4">Current Roster where you can add/drop teams maybe trade?</h1>
+    <div class="pt-4 pl-16 pr-16 pb-10">
         <table class="min-w-full divide-y divide-gray-600 border border-gray-800">
-            <!-- <thead class="bg-gray-50">
+            <thead class="bg-gray-50">
                 <tr class="divide-x divide-gray-500">
                     <th scope="col" class="py-2 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6">Name</th>
                     <th scope="col" class="px-3 py-2 text-left text-sm font-semibold text-gray-900"></th>
@@ -54,91 +54,21 @@
                     <th scope="col" class="px-3 py-2 text-left text-sm font-semibold text-gray-900"></th>
                     <th scope="col" class="px-3 py-2 text-left text-sm font-semibold text-gray-900"></th>
                 </tr>
-            </thead> -->
+            </thead>
             <tbody class="divide-y divide-gray-400 bg-white">
-                {% for player in players %}
-                    {% if player.draft_order %}
-                        <tr class="divide-x divide-gray-600">
-                            <td class="whitespace-nowrap py-1 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">{{player.username}}</td>
-                            {% for team in player.teams.all %}
-                            <td class="whitespace-nowrap px-3 py-1 text-sm text-gray-500">{{ team.school_name }}</td>
-                            {% endfor %}
-                            {% if player.teams.count < 8 %}
-                            <td class="whitespace-nowrap px-3 py-1 text-sm text-gray-500"></td>
-                            {% endif %}
-                        </tr>
+                {% for team in teams %}
+                    {% if team.owned %}
+                    <tr class="divide-x divide-gray-600">
+                        <td class="whitespace-nowrap py-1 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6 bg-amber-400">{{team.owned.username}}</td>
                     {% endif %}
-                {% endfor %}                    
+                    </tr>
+                {% endfor %}
+
             </tbody>
-        </table>
+
     </div>
 
-    <main class="px-6 pt-4"> 
-        <ul class="flex flex-wrap justify-evenly">
-            {% for conference in conferences %}
-            <li class="pt-1 mt-1 mb-1 border-solid border-4 rounded">
-                <p class="font-bold px-1 underline">{{ conference.name }}</p>
-                {% if conference.divisions.all %}
-                    {% for division in conference.divisions.all %}
-                        <p class="underline px-3">{{ division.name }}</p>
-                        {% for team in division.teams.all %}
-                            {% if team.owned %}
-                                {% if request.user == team.owned %}
-                                    <p class="text-black-500 bg-yellow-300 px-2 font-md border-2 border-solid rounded-md ml-4 mr-3">{{ team.school_name }} -> {{ team.owned }}</p>
-                                {% else %}
-                                    <p class="text-red-500 px-2 font-md border-2 border-solid rounded-md ml-4 mr-3 bg-stone-200">{{ team.school_name }} -> {{ team.owned }}</p>
-                                {% endif %}
-                            {% else %}
-                                <p class="px-6">
-                                    {% if users_turn %}
-                                        <a href="/select/{{ team.id }}">
-                                            <button class="
-                                                text-xs bg-transparent hover:bg-blue-500 text-blue-700 
-                                                font-semibold hover:text-white px-1 border 
-                                                border-blue-500 hover:border-transparent rounded">
-                                                Add
-                                            </button>
-                                        </a>
-                                    {% endif %}
-                                    {{ team.school_name }}
-                                </p>
-                            {% endif %}
-                        {% endfor %}
-                    {% endfor %}
-                {% else %}
-                    {% for team in conference.teams.all %}
-                        {% if team.owned %}
-                            {% if request.user == team.owned %}
-                            <p class="text-black-500 bg-yellow-300 px-2 font-md border-2 border-solid rounded-md ml-4 mr-3">{{ team.school_name }} -> {{ team.owned }}</p>
-                            {% else %}
-                                <p class="text-red-500 px-2 font-md border-2 border-solid rounded-md ml-4 mr-3 bg-stone-200">{{ team.school_name }} -> {{ team.owned }}</p>
-                            {% endif %}
-                        {% else %}
-                            <p class="px-6">
-                                {% if users_turn %}
-                                    <a href="/select/{{ team.id }}">
-                                        <button class="
-                                            text-xs bg-transparent hover:bg-blue-500 text-blue-700 
-                                            font-semibold hover:text-white px-1 border 
-                                            border-blue-500 hover:border-transparent rounded">
-                                            Add
-                                        </button>
-                                    </a>
-                                {% endif %}
-                                {{ team.school_name }}
-                            </p>
-                        {% endif %}
-                    {% endfor %}
-                {% endif %}
-            </li>
-            {% endfor %}
-        </ul>
-    </main>
-
-    <footer class="w-full h-10 bg-green-500 bottom-0 items-center mt-1 text-sm">
-        <p class="text-black text-center pt-2">2012 &copy College Football Challenge &trade;
-            <a href="/admin/" class="underline ml-10">admin</a></p>
-    </footer>    
+    
     
 </body>
 

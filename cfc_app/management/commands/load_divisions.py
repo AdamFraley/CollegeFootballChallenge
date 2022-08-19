@@ -7,7 +7,7 @@ import csv
 class Command(BaseCommand):
 
     def handle(self, *args, **options):
-        # print('divisions')
+        print('divisions')
 
         with open('csv/cfc_division.csv', 'r') as f:
             reader = csv.DictReader(f)

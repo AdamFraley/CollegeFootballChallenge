@@ -47,11 +47,12 @@ def select(request,id):
     if teams_owned == 56:
         return redirect('draft:home')
     else:
-        if not request.user.is_superuser:
-            if pick.player != request.user:
-                return redirect('/?message=Its+not+your+turn')
+        if request.user.is_superuser or request.user == pick.player:
+            # if pick.player != request.user:
+            #     return redirect('/?message=Its+not+your+turn')
 
-            selected_team.owned = request.user
+            selected_team.owned = pick.player
+            # request.user
             selected_team.save()
             pick.team = selected_team
             pick.save()
@@ -60,7 +61,7 @@ def select(request,id):
             print(selected_team)
             return redirect('draft:home')
         else:
-            return redirect('/?message=admin+cannot+select+teams')
+            return redirect('/?message=Its not your turn')
 
 # def drop_team(request,id):
 #     dropped_team = FbsTeam.objects.get(id=id)
@@ -99,9 +100,14 @@ def reset_draft(request):
     User.objects.update(draft_order=None)
     Draft.objects.update(current_pick=1, live=False)
     Pick.objects.all().delete()
+    draft = Draft.objects.first()
+    draft.live = True
+    draft.save()
+    draft.create_draft_order()
+    
     return redirect('draft:home')
 
-@user_passes_test(lambda u: u.is_superuser, '/?message=YOU+cant+undo+picks')
+@user_passes_test(lambda u: u.is_superuser, '/?message=YOU+cant+reset+the+draft+order')
 def undo_last_pick(request):
     draft = Draft.objects.first()
     draft.current_pick -= 1
@@ -130,7 +136,7 @@ def roster(request):
     draft = Draft.objects.first()
     players = draft.players.order_by('draft_order')
     print(players)
-    
+
 
     context = {
         'teams' : teams,

@@ -14,10 +14,18 @@
 
 <body>
     <header class="fixed w-full font-medium bg-green-400 py-3 px-10 flex justify-between items-center">
-        <h3 class="text-lg font-medium">College Football Challenge || DRAFT
-            <a href="{% url 'draft:rules' %}" class="text-base font-medium pl-48">Rules</a>
-            <a href="{% url 'draft:roster' %}" class="text-base font-medium pl-8">Current Roster</a>
-            <a href="" class="text-base font-medium pl-8">Big Board</a>
+        <h3 class="text-lg font-medium">College Football Challenge || DRAFT 2022
+            {% if current_pick == 57 %}
+                <span class="text-base font-medium pl-48">CURRENT TURN: <b class="text-red-600 text-lg">DRAFT COMPLETE</b></span>
+            {% elif current_pick == 0 %}
+                <span class="text-base font-medium pl-48">NEED 7 PLAYERS FOR DRAFT</span>
+            {% else %}
+                <span class="text-base font-medium pl-48">CURRENT TURN: <b class="bg-amber-400 pl-2 pr-2 rounded-md">{{ pick.player }}: pick {{ pick.pick_number }}</b></span>
+                <!-- <a href="{% url 'draft:rules' %}" class="text-base font-medium pl-48">Rules</a> -->
+                <!-- <a href="{% url 'draft:roster' %}" class="text-base font-medium pl-8">Current Roster</a> -->
+                <!-- <a href="" class="text-base font-medium pl-8">Big Board</a> -->
+            {% endif %}
+            
         </h3>
             <div>
                 {% if request.user.is_authenticated %}
@@ -40,10 +48,8 @@
     </header>   
     
 
-    <div class="pt-16 pl-16 pr-16 pb-10" style="background-image: url({% static 'yard_line_image.jpg' %}); background-size: cover;">
-        {% if current_pick == 57 %}
-        <h1 class="text-center font-bold text-3xl pb-4">DRAFT 2022 COMPLETE</h1>
-        {% endif %}
+    <div class="pt-20 pl-16 pr-16 pb-10" style="background-image: url({% static 'yard_line_image.jpg' %}); background-size: cover;">
+        
         <table class="min-w-full divide-y divide-gray-600 border border-gray-800">
             <thead class="bg-gray-50">
                 <tr class="divide-x divide-gray-500">
@@ -89,30 +95,74 @@
         <ul class="flex flex-wrap justify-evenly">
             {% for conference in conferences %}
             <li class="pt-1 mt-1 mb-1 border-solid border-4 rounded">
-                <p class="font-bold px-1 underline">{{ conference.name }}</p>
+                <p class="font-semibold px-1 underline bg-stone-300">{{ conference.name }}</p>
                 {% if conference.divisions.all %}
                     {% for division in conference.divisions.all %}
-                        <p class="underline px-3">{{ division.name }}</p>
+                        <p class="underline px-3 bg-stone-200">{{ division.name }} Division</p>
                         {% for team in division.teams.all %}
                             {% if team.owned %}
                                 {% if request.user == team.owned %}
-                                    <p class="text-black-500 bg-yellow-300 px-2 font-md border-2 border-solid rounded-md ml-4 mr-3">{{ team.school_name }} -> {{ team.owned }}</p>
+                                    {% if team.ap_preseason_ranking != 0 %}
+                                        <p class="text-black-500 bg-cyan-400 px-2 font-normal border-2 border-solid rounded-md ml-4 mr-3">
+                                            <b class="font-bold text-xs">{{ team.ap_preseason_ranking }}</b> 
+                                            <b class="text-right font-bold text-xs text-red-500">{{ team.fpi_ranking }}</b>                                            
+                                            {{ team.school_name }} -> {{ team.owned }}</p>
+                                    {% else %}
+                                        <p class="text-black-500 bg-cyan-400 px-2 font-normal border-2 border-solid rounded-md ml-4 mr-3">
+                                            <b class="text-right font-bold text-xs text-red-500">{{ team.fpi_ranking }}</b>                                            
+                                            {{ team.school_name }} -> {{ team.owned }}</p>
+                                    {% endif %}
+                                {% elif pick.player == team.owned %}
+                                    {% if team.ap_preseason_ranking != 0 %}
+                                        <p class="text-black-500 bg-amber-400 px-2 font-normal border-2 border-solid rounded-md ml-4 mr-3"><b class="font-bold text-xs">{{ team.ap_preseason_ranking }}</b> 
+                                            <b class="text-right font-bold text-xs text-red-500">{{ team.fpi_ranking }}</b>                                            
+                                            {{ team.school_name }} -> {{ team.owned }}</p>
+                                    {% else %}
+                                        <p class="text-black-500 bg-amber-400 px-2 font-normal border-2 border-solid rounded-md ml-4 mr-3">
+                                            <b class="text-right font-bold text-xs text-red-500">{{ team.fpi_ranking }}</b>                                            
+                                            {{ team.school_name }} -> {{ team.owned }}</p>
+                                    {% endif %}
                                 {% else %}
-                                    <p class="text-red-500 px-2 font-md border-2 border-solid rounded-md ml-4 mr-3 bg-stone-200">{{ team.school_name }} -> {{ team.owned }}</p>
+                                    {% if team.ap_preseason_ranking != 0 %}
+                                        <p class="px-2 font-md border-2 border-solid rounded-md ml-4 mr-3 bg-stone-200"><b class="text-black-500 font-bold text-xs">{{ team.ap_preseason_ranking }}</b> 
+                                            <b class="text-right font-bold text-xs text-red-500">{{ team.fpi_ranking }}</b>                                            
+                                            {{ team.school_name }} -> {{ team.owned }}</p>
+                                    {% else %}
+                                        <p class="px-2 font-md border-2 border-solid rounded-md ml-4 mr-3 bg-stone-200">
+                                            <b class="text-right font-bold text-xs text-red-500">{{ team.fpi_ranking }}</b>                                            
+                                            {{ team.school_name }} -> {{ team.owned }}</p>                                    
+                                    {% endif %}
                                 {% endif %}
                             {% else %}
-                                <p class="px-6">
-                                    {% if users_turn and current_pick != 57 %}
-                                        <a href="/select/{{ team.id }}">
-                                            <button class="
-                                                text-xs bg-transparent hover:bg-blue-500 text-blue-700 
-                                                font-semibold hover:text-white px-1 border 
-                                                border-blue-500 hover:border-transparent rounded">
-                                                select
-                                            </button>
-                                        </a>
+                                <p class="px-2">
+                                    {% if current_pick != 57 %}
+                                        {% if users_turn or request.user.is_superuser %}
+                                            <a href="/select/{{ team.id }}">
+                                                <button class="
+                                                    text-xs bg-transparent hover:bg-blue-500 text-blue-700 
+                                                    font-semibold hover:text-white px-1 border 
+                                                    border-blue-500 hover:border-transparent rounded">
+                                                    select
+                                                </button>
+                                        {% endif %}
                                     {% endif %}
-                                    {{ team.school_name }}
+                                    {% if team.ap_preseason_ranking != 0 %}
+                                        {% if team.ap_preseason_ranking > 9 %}
+                                            <b class="px-2 font-normal"><b class="font-bold text-xs">{{ team.ap_preseason_ranking }}</b> 
+                                            <b class="text-right font-bold text-xs text-red-500">{{ team.fpi_ranking }}</b>
+                                            {{ team.school_name }}</b>
+                                        {% else %}
+                                            <b class="px-4 font-normal"><b class="font-bold text-xs">{{ team.ap_preseason_ranking }}</b> 
+                                            <b class="text-right font-bold text-xs text-red-500">{{ team.fpi_ranking }}</b>                                            
+                                            {{ team.school_name }}</b>
+                                        {% endif %}
+                                    {% else %}
+                                        <b class="px-7 font-normal">
+                                            <b class="text-right font-bold text-xs text-red-500">{{ team.fpi_ranking }}</b>                                            
+                                            {{ team.school_name }}</b>
+                                    {% endif %}
+                                            </a>
+
                                 </p>
                             {% endif %}
                         {% endfor %}
@@ -121,23 +171,66 @@
                     {% for team in conference.teams.all %}
                         {% if team.owned %}
                             {% if request.user == team.owned %}
-                            <p class="text-black-500 bg-yellow-300 px-2 font-md border-2 border-solid rounded-md ml-4 mr-3">{{ team.school_name }} -> {{ team.owned }}</p>
+                                {% if team.ap_preseason_ranking != 0 %}
+                                    <p class="text-black-500 bg-cyan-400 px-2 font-normal border-2 border-solid rounded-md ml-4 mr-3"><b class="font-bold text-xs">{{ team.ap_preseason_ranking }}</b> 
+                                        <b class="text-right font-bold text-xs text-red-500">{{ team.fpi_ranking }}</b>                                        
+                                        {{ team.school_name }} -> {{ team.owned }}</p>
+                                {% else %}
+                                    <p class="text-black-500 bg-cyan-400 px-2 font-normal border-2 border-solid rounded-md ml-4 mr-3">
+                                        <b class="text-right font-bold text-xs text-red-500">{{ team.fpi_ranking }}</b>                                        
+                                        {{ team.school_name }} -> {{ team.owned }}</p>
+                                {% endif %}
+                            {% elif pick.player == team.owned %}
+                                {% if team.ap_preseason_ranking != 0 %}
+                                    <p class="text-black-500 bg-amber-400 px-2 font-normal border-2 border-solid rounded-md ml-4 mr-3"><b class="font-bold text-xs">{{ team.ap_preseason_ranking }}</b> 
+                                        <b class="text-right font-bold text-xs text-red-500">{{ team.fpi_ranking }}</b>                                        
+                                        {{ team.school_name }} -> {{ team.owned }}</p>
+                                {% else %}
+                                    <p class="text-black-500 bg-amber-400 px-2 font-normal border-2 border-solid rounded-md ml-4 mr-3">
+                                        <b class="text-right font-bold text-xs text-red-500">{{ team.fpi_ranking }}</b>                                        
+                                        {{ team.school_name }} -> {{ team.owned }}</p>
+                                {% endif %}
                             {% else %}
-                                <p class="text-red-500 px-2 font-md border-2 border-solid rounded-md ml-4 mr-3 bg-stone-200">{{ team.school_name }} -> {{ team.owned }}</p>
+                                {% if team.ap_preseason_ranking != 0 %}                                
+                                    <p class="px-2 font-md border-2 border-solid rounded-md ml-4 mr-3 bg-stone-200"><b class="font-bold text-xs text-black-500">{{ team.ap_preseason_ranking }}</b> 
+                                        <b class="text-right font-bold text-xs text-red-500">{{ team.fpi_ranking }}</b>                                        
+                                        {{ team.school_name }} -> {{ team.owned }}</p>
+                                {% else %}
+                                    <p class="px-2 font-md border-2 border-solid rounded-md ml-4 mr-3 bg-stone-200">
+                                        <b class="text-right font-bold text-xs text-red-500">{{ team.fpi_ranking }}</b>                                        
+                                        {{ team.school_name }} -> {{ team.owned }}</p>
+                                {% endif %}
                             {% endif %}
                         {% else %}
-                            <p class="px-6">
-                                {% if users_turn and current_pick != 57 %}
-                                    <a href="/select/{{ team.id }}">
-                                        <button class="
-                                            text-xs bg-transparent hover:bg-blue-500 text-blue-700 
-                                            font-semibold hover:text-white px-1 border 
-                                            border-blue-500 hover:border-transparent rounded">
-                                            select
-                                        </button>
-                                    </a>
+                            <p class="px-2">
+                                {% if current_pick != 57 %}
+                                    {% if users_turn or request.user.is_superuser %}
+                                        <a href="/select/{{ team.id }}">
+                                            <button class="
+                                                text-xs bg-transparent hover:bg-blue-500 text-blue-700 
+                                                font-semibold hover:text-white px-1 border 
+                                                border-blue-500 hover:border-transparent rounded">
+                                                select
+                                            </button>
+                                    {% endif %}
                                 {% endif %}
-                                {{ team.school_name }}
+                                    {% if team.ap_preseason_ranking %}
+                                        {% if team.ap_preseason_ranking > 9 %}
+                                            <b class="px-2 font-normal"><b class="font-bold text-xs">{{ team.ap_preseason_ranking }}</b> 
+                                            <b class="text-right font-bold text-xs text-red-500">{{ team.fpi_ranking }}</b>                                            
+                                            {{ team.school_name }}</b>
+                                        {% else %}
+                                            <b class="px-4 font-normal"><b class="font-bold text-xs">{{ team.ap_preseason_ranking }}</b> 
+                                            <b class="text-right font-bold text-xs text-red-500">{{ team.fpi_ranking }}</b>                                            
+                                            {{ team.school_name }}</b>
+                                        {% endif %}
+                                    {% else %}
+                                        <b class="px-7 font-normal">
+                                            <b class="text-right font-bold text-xs text-red-500">{{ team.fpi_ranking }}</b>                                            
+                                            {{ team.school_name }}</b>
+                                    {% endif %}
+                                    </a>
+
                             </p>
                         {% endif %}
                     {% endfor %}
@@ -152,18 +245,18 @@
             <a href="/admin/" class="underline ml-10">admin</a></p>
     </footer>
 
-<script>
-    setInterval(function () {
-        axios({
-            url: '/draft-pick-check',
-            method: 'get',
-        }).then(res => {
-            if (res.data.pick != {{ draft.current_pick }}) {
-                location.reload()
-            }
-        })
-    }, 2000)
-</script>
+    <!-- <script>
+        setInterval(function () {
+            axios({
+                url: '/draft-pick-check',
+                method: 'get',
+            }).then(res => {
+                if (res.data.pick != {{ draft.current_pick }}) {
+                    location.reload()
+                }
+            })
+        }, 2000)
+    </script>   -->
 
 </body>
 

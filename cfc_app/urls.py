@@ -14,5 +14,4 @@ urlpatterns = [
     path('rules/', views.rules, name='rules'),
     path('draft-end-test/', views.draft_end_test),
     path('roster/', views.roster, name='roster'),
-    path('draft-pick-check/', views.draft_pick_check)
 ]

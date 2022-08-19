@@ -1,4 +1,3 @@
-from re import T
 from django.db import models
 from players.models import User
 import random
@@ -25,15 +24,14 @@ class FbsTeam(models.Model):
     conference_name = models.ForeignKey(Conference, on_delete=models.PROTECT, null=True, related_name='teams')
     division_name = models.ForeignKey(Division, on_delete=models.PROTECT, null= True, blank=True, related_name='teams')
     conference_abbrev = models.CharField(max_length=12)
-    owned = models.ForeignKey(User, on_delete=models.PROTECT, null=True, blank=True, related_name='teams')
-    ranking = models.IntegerField(null=True, blank=True)
+    owned = models.ForeignKey(User, on_delete=models.PROTECT, null=True, blank=True)
+    ap_preseason_ranking = models.IntegerField(null=True, blank=True)
+    fpi_ranking = models.IntegerField(null=True, blank=True)
+    cbs_ranking = models.IntegerField(null=True, blank=True)
+    
 
     def __str__(self):
         return f'{self.school_name} - {self.owned}' if self.owned != None else f'{self.school_name}'
-    
-    class Meta:
-        ordering = ['id']
-
         
 class League(models.Model):
     name = models.CharField(max_length=25, blank=True, null=True)
@@ -50,19 +48,16 @@ class Pick(models.Model):
 
     def __str__(self):
         return f'pick {self.pick_number} - {self.player.username} -> {self.team.school_name}' if self.team != None else f'pick {self.pick_number} - {self.player.username}'
-    class Meta:
-        ordering = ['id']
 
 class Draft(models.Model):
     players = models.ManyToManyField(User, blank=True)
     current_pick = models.IntegerField(default=1)
     live = models.BooleanField(default=False)
 
-    def create_draft_order(self):
+    def create_draft_order(self): # need 7 players for draft to work
         from random import shuffle
         # print(self.players.all())
         players = list(self.players.all())
-        # print(len(players))
         # print(players)
         shuffle(players)
         # print(players)
@@ -97,5 +92,4 @@ class Draft(models.Model):
                 else:
                     player_draft_position -= 1
         return
-
-
+        

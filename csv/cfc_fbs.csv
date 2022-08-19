@@ -4,12 +4,12 @@ id,school_name,nickname,ranking,owned_id,division_name,conference_name,school_ab
 3,Houston,Cougars,,,,American Athletic Conference,,AAC
 4,Memphis,Tigers,,,,American Athletic Conference,,AAC
 5,Navy,Midshipmen,,,,American Athletic Conference,,AAC
-6,Southern Methodist University,Mustangs,,,,American Athletic Conference,SMU,AAC
+6,SMU,Mustangs,,,,American Athletic Conference,SMU,AAC
 7,South Florida,Bulls,,,,American Athletic Conference,,AAC
 8,Temple,Owls,,,,American Athletic Conference,,AAC
 9,Tulane,Green Wave,,,,American Athletic Conference,,AAC
 10,Tulsa,Golden Hurricane,,,,American Athletic Conference,,AAC
-11,University of Central Florida,Knights,,,,American Athletic Conference,UCF,AAC
+11,UCF,Knights,,,,American Athletic Conference,UCF,AAC
 12,Appalachian State,Mountaineers,,,East,Sun Belt Conference,,Sun Belt
 13,Coastal Carolina,Chanticleers,,,East,Sun Belt Conference,CCU,Sun Belt
 14,Georgia Southern,Eagles,,,East,Sun Belt Conference,,Sun Belt
@@ -28,7 +28,7 @@ id,school_name,nickname,ranking,owned_id,division_name,conference_name,school_ab
 27,Clemson,Tigers,,,Atlantic,Atlantic Coast Conference,,ACC
 28,Florida State,Seminoles,,,Atlantic,Atlantic Coast Conference,FSU,ACC
 29,Louisville,Cardinals,,,Atlantic,Atlantic Coast Conference,,ACC
-30,NS State,Wolfpack,,,Atlantic,Atlantic Coast Conference,,ACC
+30,NC State,Wolfpack,,,Atlantic,Atlantic Coast Conference,,ACC
 31,Syracuse,Orange,,,Atlantic,Atlantic Coast Conference,,ACC
 32,Wake Forest,Demon Deacons,,,Atlantic,Atlantic Coast Conference,WF,ACC
 33,Duke,Blue Devils,,,Coastal,Atlantic Coast Conference,,ACC
@@ -58,7 +58,7 @@ id,school_name,nickname,ranking,owned_id,division_name,conference_name,school_ab
 57,Kansas State,Wildcats,,,,Big 12 Conference,KSU,Big 12
 58,Oklahoma,Sooners,,,,Big 12 Conference,OU,Big 12
 59,Oklahoma State,Cowboys,,,,Big 12 Conference,OSU,Big 12
-60,Texas Christian University,Horned Frogs,,,,Big 12 Conference,TCU,Big 12
+60,TCU,Horned Frogs,,,,Big 12 Conference,TCU,Big 12
 61,Texas,Longhorns,,,,Big 12 Conference,UT,Big 12
 62,Texas Tech,Red Raiders,,,,Big 12 Conference,TTU,Big 12
 63,West Virginia,Mountaineers,,,,Big 12 Conference,WVU,Big 12

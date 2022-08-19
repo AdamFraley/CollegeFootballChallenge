@@ -1,0 +1,132 @@
+id,school_name,nickname,ap_ranking,owned_id,division_name,conference_name,school_abbrev,conference_abbrev,fpi_rk,proj_wins,proj_losses,win_div_perc,win_con_perc,cbs_rank
+116,Alabama,Crimson Tide,1,,West,Southeastern Conference,,SEC,1,11.4,1.5,86.7,49.3,1
+44,Ohio State,Buckeyes,2,,East,Big Ten Conference,OSU,Big Ten,2,11.8,1,79.5,73.1,2
+110,Georgia,Bulldogs,3,,East,Southeastern Conference,UG,SEC,3,11.6,1.3,89.6,47.1,3
+27,Clemson,Tigers,4,,Atlantic,Atlantic Coast Conference,,ACC,4,11.1,1.7,75,59,5
+87,Air Force,Falcons,42,,Mountain,Mountain West Conference,,MWC,71,7.9,4.3,21.2,12,58
+127,Notre Dame,Fighting Irish,5,,,FBS Independents,,Independent,5,9.1,2.9,0,0,6
+122,Texas A&M,Aggies,6,,West,Southeastern Conference,,SEC,12,7.4,4.6,2.5,0.4,9
+106,Utah,Utes,7,,,Pac-12 Conference,,Pac-12,13,9.4,3,59,25.2,4
+42,Michigan,Wolverines,8,,East,Big Ten Conference,UM,Big Ten,6,9.5,2.6,11.2,8.3,8
+58,Oklahoma,Sooners,9,,,Big 12 Conference,OU,Big 12,8,9.1,3.4,0,28.1,7
+54,Baylor,Bears,10,,,Big 12 Conference,,Big 12,22,7.7,4.5,0,7.6,10
+103,Oregon,Ducks,11,,,Pac-12 Conference,,Pac-12,23,8.6,3.8,54.3,19.2,14
+59,Oklahoma State,Cowboys,12,,,Big 12 Conference,OSU,Big 12,14,8.7,3.6,0,15.4,13
+30,NC State,Wolfpack,13,,Atlantic,Atlantic Coast Conference,,ACC,28,8,4.1,7.5,3.2,11
+105,USC,Trojans,14,,,Pac-12 Conference,USC,Pac-12,35,8.1,4.1,27.8,7.5,12
+43,Michigan State,Spartans,15,,East,Big Ten Conference,MSU,Big Ten,15,8,4.1,3.8,2.3,20
+35,Miami (FL),Hurricanes,16,,Coastal,Atlantic Coast Conference,UM,ACC,9,9.2,3.3,45.1,16.6,19
+37,Pittsburgh,Panthers,17,,Coastal,Atlantic Coast Conference,Pitt,ACC,20,8.7,3.5,24,6.8,25
+53,Wisconsin,Badgers,18,,West,Big Ten Conference,,Big Ten,21,8.2,4.1,28.2,4.6,15
+117,Arkansas,Razorbacks,19,,West,Southeastern Conference,,SEC,26,6.5,5.5,1.6,0.2,16
+111,Kentucky,Wildcats,20,,East,Southeastern Conference,UK,SEC,18,8.2,3.9,5.9,0.9,23
+121,Ole Miss,Rebels,21,,West,Southeastern Conference,,SEC,17,7.7,4.3,2.1,0.3,27
+32,Wake Forest,Demon Deacons,22,,Atlantic,Atlantic Coast Conference,WF,ACC,30,8,4.1,7.5,3.1,21
+1,Cincinnati,Bearcats,23,,,American Athletic Conference,,AAC,27,9.8,2.8,0,39.9,17
+3,Houston,Cougars,24,,,American Athletic Conference,,AAC,44,8.8,3.6,0,17.2,22
+124,BYU,Cougars,25,,,FBS Independents,BYU,Independent,46,7,5,0,0,26
+114,Tennessee,Volunteers,26,,East,Southeastern Conference,,SEC,25,7.1,4.9,1.3,0.2,24
+61,Texas,Longhorns,27,,,Big 12 Conference,UT,Big 12,7,9.3,3.3,0,39.8,29
+48,Iowa,Hawkeyes,28,,West,Big Ten Conference,,Big Ten,37,6.7,5.4,11.5,1.4,28
+45,Penn State,Nittany Lions,29,,East,Big Ten Conference,PSU,Big Ten,16,8,4.1,5,3.1,18
+119,LSU,Tigers,30,,West,Southeastern Conference,LSU,SEC,10,7.7,4.3,4.6,0.8,31
+93,Fresno State,Bulldogs,31,,West,Mountain West Conference,,MWC,69,8.1,4.4,48.5,19.5,39
+49,Minnesota,Golden Gophers,32,,West,Big Ten Conference,,Big Ten,40,7.5,4.6,13.9,1.5,32
+11,UCF,Knights,33,,,American Athletic Conference,UCF,AAC,34,9.3,3.2,0,26.8,40
+52,Purdue,Boilermakers,34,,West,Big Ten Conference,,Big Ten,41,7.1,5.1,14.6,1.4,34
+120,Mississippi State,Bulldogs,35,,West,Southeastern Conference,MSU,SEC,24,6.5,5.5,0.4,0.1,35
+118,Auburn,Tigers,36,,West,Southeastern Conference,,SEC,11,7.4,4.7,2,0.4,47
+57,Kansas State,Wildcats,37,,,Big 12 Conference,KSU,Big 12,43,6.3,5.8,0,1.2,37
+109,Florida,Gators,38,,East,Southeastern Conference,UF,SEC,29,6.9,5.1,2.4,0.3,30
+36,North Carolina,Tarheels,39,,Coastal,Atlantic Coast Conference,UNC,ACC,19,8.3,4,25.4,7,46
+88,Boise State,Broncos,40,,Mountain,Mountain West Conference,,MWC,47,9.6,3,62.7,47.2,38
+12,Appalachian State,Mountaineers,41,,East,Sun Belt Conference,,Sun Belt,54,8.5,3.9,39.1,27.9,42
+113,South Carolina,Gamecocks,43,,East,Southeastern Conference,USC,SEC,45,5.9,6.1,0.6,0.1,53
+91,Utah State,Aggies,44,,Mountain,Mountain West Conference,USU,MWC,88,6.5,5.6,9.6,4.2,63
+131,UCLA,Bruins,45,,,Pac-12 Conference,UCLA,Pac-12,39,8.3,3.8,22,5.5,33
+96,San Diego State,Aztecs,46,,West,Mountain West Conference,SDSU,MWC,80,7.4,4.9,28.7,10.5,48
+50,Nebraska,Cornhuskers,47,,West,Big Ten Conference,,Big Ten,32,7.8,4.5,31,3.9,49
+55,Iowa State,Cyclones,0,,,Big 12 Conference,ISU,Big 12,31,7.4,4.7,0,4.9,43
+28,Florida State,Seminoles,0,,Atlantic,Atlantic Coast Conference,FSU,ACC,33,6.8,5.3,5.1,2,50
+29,Louisville,Cardinals,0,,Atlantic,Atlantic Coast Conference,,ACC,36,6.3,5.7,3.9,1.5,41
+41,Maryland,Terrapins,0,,East,Big Ten Conference,,Big Ten,38,6.5,5.5,0.5,0.2,56
+60,TCU,Horned Frogs,0,,,Big 12 Conference,TCU,Big 12,42,6.4,5.7,0,1.8,60
+107,Washington,Huskies,0,,,Pac-12 Conference,UW,Pac-12,48,7.5,4.6,13.5,2.8,45
+62,Texas Tech,Red Raiders,0,,,Big 12 Conference,TTU,Big 12,49,5.5,6.6,0,0.9,68
+100,Arizona State,Sun Devils,0,,,Pac-12 Conference,ASU,Pac-12,50,6.8,5.2,11.1,2.2,72
+63,West Virginia,Mountaineers,0,,,Big 12 Conference,WVU,Big 12,51,5.2,6.8,0,0.4,66
+6,SMU,Mustangs,0,,,American Athletic Conference,SMU,AAC,52,7,5.2,0,5.6,44
+4,Memphis,Tigers,0,,,American Athletic Conference,,AAC,53,7.9,4.4,0,7.2,64
+38,Virginia,Cavaliers,0,,Coastal,Atlantic Coast Conference,UV,ACC,55,6.6,5.4,3.8,0.5,59
+112,Missouri,Tigers,0,,East,Southeastern Conference,,SEC,56,5.5,6.5,0.1,0,67
+104,Oregon State,Beavers,0,,,Pac-12 Conference,OSU,Pac-12,57,6,6,4.8,0.8,51
+17,Marshall,Thundering Herd,0,,East,Sun Belt Conference,,Sun Belt,58,8.6,3.7,33.4,23.3,76
+26,Boston College,Eagles,0,,Atlantic,Atlantic Coast Conference,,ACC,59,5.6,6.4,0.7,0.1,55
+31,Syracuse,Orange,0,,Atlantic,Atlantic Coast Conference,,ACC,60,5.1,6.9,0.4,0.1,89
+123,Army,Black Knights,0,,,FBS Independents,,Independent,61,8.7,3.3,0,0,65
+130,Stanford,Cardinal,0,,,Pac-12 Conference,,Pac-12,62,5,7,2.3,0.4,71
+71,UAB,Blazers,0,,,Conference USA,UAB,C-USA,63,7.8,4.6,36,22.2,57
+9,Tulane,Green Wave,0,,,American Athletic Conference,,AAC,64,6.5,5.5,0,1.5,107
+74,Western Kentucky,Hilltoppers,0,,,Conference USA,WKU,C-USA,65,8.1,5.3,39.1,21.4,77
+34,Georgia Tech,Yellow Jackets,0,,Coastal,Atlantic Coast Conference,GT,ACC,66,3.9,8.1,0.8,0.1,96
+101,California,Golden Bears,0,,,Pac-12 Conference,Cal,Pac-12,67,5.6,6.5,3,0.4,75
+40,Indiana,Hoosiers,0,,East,Big Ten Conference,IU,Big Ten,68,4.2,7.8,0,0,88
+85,Toledo,Rockets,0,,West,Mid-American Conference,,MAC,70,8.6,4,51.3,35.8,69
+73,UTSA,Roadrunners,0,,,Conference USA,UTSA,C-USA,72,7.2,5.2,34.4,19.8,62
+39,Virginia Tech,Hokies,0,,Coastal,Atlantic Coast Conference,VT,ACC,73,5.2,6.8,0.8,0.1,52
+20,Louisiana,Ragin' Cajuns,0,,West,Sun Belt Conference,ULL,Sun Belt,74,8.2,4.2,41.3,17.7,61
+47,Illinois,Fighting Illini,0,,West,Big Ten Conference,,Big Ten,75,4.5,7.5,0.6,0,82
+125,Liberty,Flames,0,,,FBS Independents,LU,Independent,76,7.6,4.4,0,0,74
+2,East Carolina,Pirates,0,,,American Athletic Conference,,AAC,77,5.8,6.2,0,1.2,73
+25,Troy,Trojans,0,,West,Sun Belt Conference,,Sun Belt,78,7,5.3,28.5,11.8,95
+108,Washington State,Cougars,0,,,Pac-12 Conference,WSU,Pac-12,79,5,7,1.4,0.2,54
+51,Northwestern,Wildcats,0,,West,Big Ten Conference,,Big Ten,81,4.2,7.8,0.3,0,81
+46,Rutgers,Scarlet Knights,0,,East,Big Ten Conference,,Big Ten,82,3.9,8.1,0,0,78
+13,Coastal Carolina,Chanticleers,0,,East,Sun Belt Conference,CCU,Sun Belt,83,7.3,4.8,14.9,7.6,36
+102,Colorado,Buffaloes,0,,,Pac-12 Conference,CU,Pac-12,84,3.5,8.5,0.6,0.1,98
+68,Middle Tennessee,Blue Raiders,0,,,Conference USA,MTSU,C-USA,85,7,5.3,25.2,11.3,112
+7,South Florida,Bulls,0,,,American Athletic Conference,,AAC,86,4.6,7.4,0,0.4,110
+66,Florida Atlantic,Owls,0,,,Conference USA,FAU,C-USA,87,6.6,5.6,24.1,9.8,101
+15,Georgia State,Panthers,0,,East,Sun Belt Conference,,Sun Belt,89,5.7,6.4,8.4,3.9,80
+67,Louisiana Tech,Bulldogs,0,,,Conference USA,LT,C-USA,90,6.3,5.8,16.1,6.9,121
+99,Arizona,Wildcats,0,,,Pac-12 Conference,AU,Pac-12,91,3.5,8.5,0.3,0,91
+10,Tulsa,Golden Hurricane,0,,,American Athletic Conference,,AAC,92,5.2,6.8,0,0.3,86
+69,North Texas,Mean Green,0,,,Conference USA,UNT,C-USA,93,6.3,5.8,11.4,4.6,90
+77,Buffalo,Bulls,0,,East,Mid-American Conference,,MAC,94,7.1,5.3,34.7,15.4,117
+82,Central Michigan,Chippewas,0,,West,Mid-American Conference,CMU,MAC,95,6.6,5.6,16.6,9.2,79
+79,Miami,Redhawks,0,,East,Mid-American Conference,,MAC,96,6.7,5.7,40.2,17.1,84
+64,Charlotte,49ers,0,,,Conference USA,,C-USA,97,5.6,6.5,11.1,3.5,104
+95,Nevada,Wolf Pack,0,,West,Mountain West Conference,,MWC,98,5.8,6.2,7,1.5,106
+92,Wyoming,Cowboys,0,,Mountain,Mountain West Conference,,MWC,99,5.5,6.5,4.7,1.7,94
+23,Southern Miss,Golden Eagles,0,,West,Sun Belt Conference,,Sun Belt,100,5.6,6.5,10.7,2.6,108
+33,Duke,Blue Devils,0,,Coastal,Atlantic Coast Conference,,ACC,101,3.8,8.2,0,0,109
+86,Western Michigan,Broncos,0,,West,Mid-American Conference,WMU,MAC,102,6,6.2,14.5,7.6,93
+14,Georgia Southern,Eagles,0,,East,Sun Belt Conference,,Sun Belt,103,5.3,6.7,2.6,0.9,119
+5,Navy,Midshipmen,0,,,American Athletic Conference,,AAC,104,3.7,8.3,0,0,103
+94,Hawaii,Rainbow Warriors,0,,West,Mountain West Conference,,MWC,105,6.6,6.4,6.7,1.1,123
+56,Kansas,Jayhawks,0,,,Big 12 Conference,,Big 12,106,2.6,9.4,0,0,102
+97,San Jose State,Spartans,0,,West,Mountain West Conference,SJSU,MWC,107,5.9,6.1,6.4,1.2,97
+115,Vanderbilt,Commodores,0,,East,Southeastern Conference,,SEC,108,2.5,9.5,0,0,113
+84,Northern Illinois,Huskies,0,,West,Mid-American Conference,NIU,MAC,109,5.9,6.2,8.7,3.8,70
+22,South Alabama,Jaguars,0,,West,Sun Belt Conference,USA,Sun Belt,110,5.4,6.6,6.6,1.4,92
+24,Texas State,Bobcats,0,,West,Sun Belt Conference,,Sun Belt,111,5.7,6.4,6,1.2,122
+18,Old Dominion,Monarchs,0,,East,Sun Belt Conference,ODU,Sun Belt,112,4.2,7.8,1.5,0.5,105
+19,Arkansas State,Red Wolves,0,,West,Sun Belt Conference,,Sun Belt,113,5.6,6.4,6.6,1.3,99
+89,Colorado State,Rams,0,,Mountain,Mountain West Conference,CSU,MWC,114,4.7,7.3,1.8,0.6,87
+78,Kent State,Golden Flashes,0,,East,Mid-American Conference,,MAC,115,5.3,6.9,15,5.2,83
+83,Eastern Michigan,Eagles,0,,West,Mid-American Conference,EMU,MAC,116,5.7,6.4,5.8,2.6,100
+98,UNLV,Rebels,0,,West,Mountain West Conference,UNLV,MWC,117,4.4,7.6,2.6,0.4,116
+81,Ball State,Cardinals,0,,West,Mid-American Conference,,MAC,118,5.4,6.7,3,1.3,115
+72,UTEP,Miners,0,,,Conference USA,UTEP,C-USA,119,4.5,7.5,1.8,0.4,85
+16,James Madison,Dukes,0,,East,Sun Belt Conference,JMU,Sun Belt,120,3.6,7.4,0,0,118
+8,Temple,Owls,0,,,American Athletic Conference,,AAC,121,3.5,8.5,0,0,124
+80,Ohio,Bobcats,0,,East,Mid-American Conference,,MAC,122,4.6,7.5,5.6,1.3,114
+70,Rice,Owls,0,,,Conference USA,,C-USA,123,3.1,8.9,0.4,0,120
+65,Florida International,Panthers,0,,,Conference USA,FIU,C-USA,124,4.3,7.7,0.6,0.1,130
+76,Bowling Green,Falcons,0,,East,Mid-American Conference,,MAC,125,3.4,8.7,2.2,0.4,111
+75,Akron,Zips,0,,East,Mid-American Conference,,MAC,126,3.6,8.4,2.3,0.4,125
+90,New Mexico,Lobos,0,,Mountain,Mountain West Conference,,MWC,127,3.1,8.9,0.1,0,127
+21,UL Monroe,Warhawks,0,,West,Sun Belt Conference,ULM,Sun Belt,128,2.5,9.5,0.3,0,126
+129,UMass,Minutemen,0,,,FBS Independents,,Independent,129,3.2,8.8,0,0,131
+128,UConn,Huskies,0,,,FBS Independents,,Independent,130,2.6,9.4,0,0,128
+126,New Mexico State,Aggies,0,,,FBS Independents,NMSU,Independent,131,3.2,8.8,0,0,129

@@ -3,6 +3,7 @@ from cfc_app.models import Conference
 
 import csv
 
+# print(hello)
 
 class Command(BaseCommand):
 
